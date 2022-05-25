@@ -1,4 +1,5 @@
 # Movie Ratings Capstone Project
+<hr>
 
 <details>
 <summary>Table of Contents</summary>
@@ -24,11 +25,15 @@ Using the data available from the iMDb API, our team intends to compare differen
 Once we explore the data, we will look for any trends that show over the past 2 decades that may have affected what makes a movie successful.  In those 20 years, streaming has risen in popularity, consumer tastes have changed and even how movies are structured has changed(cinematic universes), all of which may have altered what causes a movie's success. Taking these into account, we can build a model that can predict a movie's success rate , thus giving insight into how to outline movies for maximum success in the theaters.   
 </details>
 
+
+
 ## Data Dictionary
+
 <hr>
 
 <details>
 <summary>Expand</summary>
+      
 | Feature  | Desctiption |
 | :-------------: | :-------------: |
 | Content Cell  | Content Cell  |
@@ -41,9 +46,8 @@ Once we explore the data, we will look for any trends that show over the past 2 
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
-
-<\details>
-    
+</details>
+  
 
 ## Planning Phase
 <hr>
