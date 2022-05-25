@@ -109,6 +109,7 @@ Once we explore the data, we will look for any trends that show over the past 2 
 <details>
 <summary>Links</summary>
     <a href = 'https://github.com/Movie-Success-Capstone/Movie-Capstone'>Github</a>
+    <br>
     <a href = 'https://github.com/Movie-Success-Capstone/Movie-Capstone'>Google Slides</a>
 
 </details>
