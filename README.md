@@ -54,6 +54,7 @@ Once we explore the data, we will look for any trends that show over the past 2 
 
 <details>
 <summary>Expand</summary>
+    Planning text goes here...
 </details>
 
 ## Data Acquisition
@@ -61,6 +62,8 @@ Once we explore the data, we will look for any trends that show over the past 2 
 
 <details>
 <summary>Expand</summary>
+    Acquisition text goes here...
+
 </details>
 
 ## Data Praparation 
@@ -68,7 +71,7 @@ Once we explore the data, we will look for any trends that show over the past 2 
 
 <details>
 <summary>Expand</summary>
-Prepare goes here...
+    Prepare goes here...
 </details>
 
 ## Exploration And Feature Engineering 
@@ -76,7 +79,7 @@ Prepare goes here...
 
 <details>
 <summary>Expand</summary>
-Explore goes here...
+    Explore goes here...
 </details>
 
 ## Modeling 
@@ -84,16 +87,9 @@ Explore goes here...
 
 <details>
 <summary>Expand</summary>
-Modeling goes here...
+    Modeling goes here...
 </details>
 
-## Planning Phase 
-<hr>
-
-<details>
-<summary>Expand</summary>
-planning 
-</details>
 
 ## Steps to Reproduce Project 
 <hr>
@@ -111,7 +107,10 @@ planning
 <hr>
 
 <details>
-<summary>Expand</summary>
+<summary>Links</summary>
+    <a>GitHub link</a>
+    <a>Google Slides</a>
+
 </details>
 
 
