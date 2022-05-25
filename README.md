@@ -16,7 +16,7 @@
 </details>
 
 
-<div id = 'intro'>
+<!-- <div id = 'intro'> -->
 ## Introduction 
 <hr>
 
@@ -27,10 +27,10 @@ SAMPLE TEXT
 Using the data available from the iMDb API, our team intends to compare different features of movies made between the year 2000 and present day in an attempt to determine the key features that might predict how successful the movie is(Success being measured by iMBd scores/public ratings). 
 Once we explore the data, we will look for any trends that show over the past 2 decades that may have affected what makes a movie successful.  In those 20 years, streaming has risen in popularity, consumer tastes have changed and even how movies are structured has changed(cinematic universes), all of which may have altered what causes a movie's success. Taking these into account, we can build a model that can predict a movie's success rate , thus giving insight into how to outline movies for maximum success in the theaters.   
 </details>
-</div>
-<!-- </div> End Introduction here  -->
+<!-- </div> -->
+<!-- End Introduction here  -->
 
-<div id = 'dict'>
+<!-- <div id = 'dict'> -->
 ## Data Dictionary
 <hr>
 
@@ -50,21 +50,21 @@ Once we explore the data, we will look for any trends that show over the past 2 
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 </details>
-</div> 
-<!-- </div> End Data Dictionary here  -->
+<!-- </div>  -->
+<!-- End Data Dictionary here  -->
 
 
-<div id = 'plan'>
+<!-- <div id = 'plan'> -->
 ## Planning Phase
 <hr>
 <details>
 <summary>Expand</summary>
     Planning text goes here...
 </details>   
-</div>
-<!-- </div> End Planning here  -->
+<!-- </div> -->
+<!-- End Planning here  -->
 
-<div id = 'acquire'>
+<!-- <div id = 'acquire'> -->
 ## Data Acquisition
 <hr>
 <details>
@@ -73,45 +73,45 @@ Once we explore the data, we will look for any trends that show over the past 2 
 
 </details>
 </div>
-<!-- </div> End Acquire here  -->
+<!-- End Acquire here  -->
 
 
-<div id = 'prep'>
+<!-- <div id = 'prep'> -->
 ## Data Praparation 
 <hr>
 <details>
 <summary>Expand</summary>
     Prepare goes here...
 </details>
-</div>
-<!-- </div> End Prepare here  -->
+<!-- </div> -->
+<!-- End Prepare here  -->
 
 
-<div id = 'explore'>
+<!-- <div id = 'explore'> -->
 ## Exploration And Feature Engineering 
 <hr>
 <details>
 <summary>Expand</summary>
     Explore goes here...
 </details>
-</div>
-<!-- </div> End Explore here  -->
+<!-- </div> -->
+<!-- End Explore here  -->
 
 
 
-<div id = 'model'>
+<!-- <div id = 'model'> -->
 ## Modeling 
 <hr>
 <details>
 <summary>Expand</summary>
     Modeling goes here...
 </details>
-</div>
-<!-- </div> End Modeling here  -->
+<!-- </div> -->
+<!-- End Modeling here  -->
 
 
 
-<div id = 'steps'>
+<!-- <div id = 'steps'> -->
 ## Steps to Reproduce Project 
 <hr>
 <details>
@@ -122,11 +122,11 @@ Once we explore the data, we will look for any trends that show over the past 2 
       <li>Step 3</li>
   </ol>
 </details>
-</div>
-<!-- </div> End Steps here  -->
+<!-- </div> -->
+<!-- End Steps here  -->
   
     
-<div id = 'appnx'>
+<!-- <div id = 'appnx'> -->
 ## Appendix 
 <hr>
 <details>
@@ -135,7 +135,7 @@ Once we explore the data, we will look for any trends that show over the past 2 
     <br>
     <a href = 'https://github.com/Movie-Success-Capstone/Movie-Capstone'>Google Slides</a>
 </details>
-</div>
-<!-- </div> End Appendix here  -->
+<!-- </div> -->
+<!-- End Appendix here  -->
 
 <div id ='top'></div>
