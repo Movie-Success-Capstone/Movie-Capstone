@@ -1,19 +1,19 @@
 # Movie Ratings Capstone Project
 <hr>
-
 <details>
 <summary>Table of Contents</summary>
-<summary>Introduction</summary>
-<summary>Planning Phase </summary>
-<summary>Data Acquisition</summary>
-<summary>Prepare Phase </summary>
-<summary>Exploration Phase</summary>
-<summary>Modeling </summary>
-<summary>Key Findings and Summary </summary>
-<summary>Steps to Reproduce the Project </summary>
-
+<a href = '#intro'>Introduction</a>
+<a>Planning Phase </a>
+<a>Data Acquisition</a>
+<a>Prepare Phase </a>
+<a>Exploration Phase</a>
+<a>Modeling </a>
+<a>Key Findings and Summary </a>
+<a>Steps to Reproduce the Project </a>
 </details>
 
+
+<div id = 'intro'>
 ## Introduction 
 <hr>
 
@@ -24,7 +24,7 @@ SAMPLE TEXT
 Using the data available from the iMDb API, our team intends to compare different features of movies made between the year 2000 and present day in an attempt to determine the key features that might predict how successful the movie is(Success being measured by iMBd scores/public ratings). 
 Once we explore the data, we will look for any trends that show over the past 2 decades that may have affected what makes a movie successful.  In those 20 years, streaming has risen in popularity, consumer tastes have changed and even how movies are structured has changed(cinematic universes), all of which may have altered what causes a movie's success. Taking these into account, we can build a model that can predict a movie's success rate , thus giving insight into how to outline movies for maximum success in the theaters.   
 </details>
-
+</div>
 
 
 ## Data Dictionary
@@ -114,4 +114,4 @@ Once we explore the data, we will look for any trends that show over the past 2 
 
 </details>
 
-
+<div id ='top'></div>
