@@ -2,32 +2,25 @@
 
 <details>
 <summary>Table of Contents</summary>
+<summary>Introduction</summary>
+<summary>Planning Phase </summary>
+<summary>Data Acquisition</summary>
+<summary>Prepare Phase </summary>
+<summary>Exploration Phase</summary>
+<summary>Modeling </summary>
+<summary>Key Findings and Summary </summary>
+<summary>Steps to Reproduce the Project </summary>
 
-    + <details>
-        <summary>Introduction</summary>
-        <summary>Goal</summary>
-    
-        + <details>
-            <summary>Heading1.1.1</summary>
-            even more text
-        </details>
-    
-    <summary>Introduction</summary>
-    <summary>Planning Phase </summary>
-    <summary>Data Acquisition</summary>
-    <summary>Prepare Phase </summary>
-    <summary>Exploration Phase</summary>
-    <summary>Modeling </summary>
-    <summary>Key Findings and Summary </summary>
-    <summary>Steps to Reproduce the Project </summary>
-
-   </details>
 </details>
 
 ## Introduction 
 <details>
 <summary>Expand</summary>
 </details>
+
+## Data Dictionary
+
+
 
 
 ## Planning Phase 
