@@ -2,14 +2,17 @@
 <hr>
 <details>
 <summary>Table of Contents</summary>
-<a href = '#intro'>Introduction</a>
-<a>Planning Phase </a>
-<a>Data Acquisition</a>
-<a>Prepare Phase </a>
-<a>Exploration Phase</a>
-<a>Modeling </a>
-<a>Key Findings and Summary </a>
-<a>Steps to Reproduce the Project </a>
+<ul>
+  <li><a href = '#intro'>Introduction</a></li>
+  <li><a href = '#dict'>Data Dictionary </a></li>
+  <li><a href = '#plan'>Planning </a></li>
+  <li><a href = '#acquire'>Acquisition </a></li>
+  <li><a href = '#prep'>Preparation </a></li>
+  <li><a href = '#explore'>Exploration </a></li>
+  <li><a href = '#model'>Modeling </a></li>
+  <li><a href = '#steps'>Steps to Reproduce </a></li>
+  <li><a href = '#appnx'>Appendix </a></li>
+</ul>
 </details>
 
 
@@ -25,10 +28,10 @@ Using the data available from the iMDb API, our team intends to compare differen
 Once we explore the data, we will look for any trends that show over the past 2 decades that may have affected what makes a movie successful.  In those 20 years, streaming has risen in popularity, consumer tastes have changed and even how movies are structured has changed(cinematic universes), all of which may have altered what causes a movie's success. Taking these into account, we can build a model that can predict a movie's success rate , thus giving insight into how to outline movies for maximum success in the theaters.   
 </details>
 </div>
+<!-- </div> End Introduction here  -->
 
-
+<div id = 'dict'>
 ## Data Dictionary
-
 <hr>
 
 <details>
@@ -47,53 +50,70 @@ Once we explore the data, we will look for any trends that show over the past 2 
 | Content Cell  | Content Cell  |
 | Content Cell  | Content Cell  |
 </details>
-  
+</div> 
+<!-- </div> End Data Dictionary here  -->
 
+
+<div id = 'plan'>
 ## Planning Phase
 <hr>
-
 <details>
 <summary>Expand</summary>
     Planning text goes here...
-</details>
+</details>   
+</div>
+<!-- </div> End Planning here  -->
 
+<div id = 'acquire'>
 ## Data Acquisition
 <hr>
-
 <details>
 <summary>Expand</summary>
     Acquisition text goes here...
 
 </details>
+</div>
+<!-- </div> End Acquire here  -->
 
+
+<div id = 'prep'>
 ## Data Praparation 
 <hr>
-
 <details>
 <summary>Expand</summary>
     Prepare goes here...
 </details>
+</div>
+<!-- </div> End Prepare here  -->
 
+
+<div id = 'explore'>
 ## Exploration And Feature Engineering 
 <hr>
-
 <details>
 <summary>Expand</summary>
     Explore goes here...
 </details>
+</div>
+<!-- </div> End Explore here  -->
 
+
+
+<div id = 'model'>
 ## Modeling 
 <hr>
-
 <details>
 <summary>Expand</summary>
     Modeling goes here...
 </details>
+</div>
+<!-- </div> End Modeling here  -->
 
 
+
+<div id = 'steps'>
 ## Steps to Reproduce Project 
 <hr>
-
 <details>
 <summary>Expand</summary>
   <ol>
@@ -102,16 +122,20 @@ Once we explore the data, we will look for any trends that show over the past 2 
       <li>Step 3</li>
   </ol>
 </details>
-
+</div>
+<!-- </div> End Steps here  -->
+  
+    
+<div id = 'appnx'>
 ## Appendix 
 <hr>
-
 <details>
 <summary>Links</summary>
     <a href = 'https://github.com/Movie-Success-Capstone/Movie-Capstone'>Github</a>
     <br>
     <a href = 'https://github.com/Movie-Success-Capstone/Movie-Capstone'>Google Slides</a>
-
 </details>
+</div>
+<!-- </div> End Appendix here  -->
 
 <div id ='top'></div>
