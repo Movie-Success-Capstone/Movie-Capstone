@@ -9,6 +9,7 @@ __pycache__
 
 *.csv
 *.tsv
+*.gz
 
 # MITO
 */iframe_figures/
