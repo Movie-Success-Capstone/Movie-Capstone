@@ -7,6 +7,8 @@ env.py
 __pycache__
 *.xlsx
 
+*.csv
+
 # MITO
 */iframe_figures/
 *iframe_figures
