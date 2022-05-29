@@ -8,6 +8,7 @@ def prep_data(df):
     df.drop(['Unnamed: 0'], axis=1, inplace=True)
     df.dropna(axis=0, inplace=True)
     df.drop_duplicates(subset=None, keep='first', inplace=True, ignore_index=True)
+    df['release_date'] = df['release_date'].astype('datetime64[ns]')
     
     
     
