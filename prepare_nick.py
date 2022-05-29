@@ -5,7 +5,9 @@ from datetime import date
 
 def prep_data(df):
     
-    df = df.drop(['Unnamed: 0'], axis=1)
+    df.drop(['Unnamed: 0'], axis=1, inplace=True)
+    df.dropna(axis=0, inplace=True)
+    df.drop_duplicates(subset=None, keep='first', inplace=True, ignore_index=True)
     
     
     
