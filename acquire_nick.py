@@ -1,4 +1,5 @@
 import pandas as pd 
+import os
 
 def acquire_data(use_cache=True):
     """
