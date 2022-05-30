@@ -110,7 +110,10 @@ def wrangle_movies_data(df):
     # Set 'release_date' as index & sort values
     df = df.set_index('release_date').sort_index()
     
-    # Rename columns
+    # Split words in columns ['cast', 'crew', 'production_companies', 'production_countries'] into regular englist expressions
+    #-------------How?? IDK what delimeter to use-------------
+    
+    # Rename columns (NOT necessary)
     
     # Lower all data in dataframe
     df = df.applymap(lambda s: s.lower() if type(s) == str else s)
