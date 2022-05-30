@@ -110,7 +110,7 @@ def wrangle_movies_data(df):
     # Set 'release_date' as index & sort values
     df = df.set_index('release_date').sort_index()
     
-    # Split words in columns ['cast', 'crew', 'production_companies', 'production_countries'] into regular englist expressions
+    # Split words in columns ['cast', 'crew', 'production_companies', 'production_countries'] into regular english expressions
     #-------------How?? IDK what delimeter to use-------------
     
     # Rename columns (NOT necessary)
