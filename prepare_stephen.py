@@ -113,7 +113,11 @@ def wrangle_movies_data(df):
     # Split words in columns ['cast', 'crew', 'production_companies', 'production_countries'] into regular english expressions
     #-------------How?? IDK what delimeter to use-------------
     
-    # Rename columns (NOT necessary)
+    # Check nulls and fill by replacing nulls with _________??
+    
+    # Check outliers and remove by ______ (necessary step)??
+    
+    # Rename columns (---NOT necessary---)
     
     # Lower all data in dataframe
     df = df.applymap(lambda s: s.lower() if type(s) == str else s)
