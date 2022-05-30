@@ -58,7 +58,7 @@ def handle_missing_values(df, prop_required_column, prop_required_row):
 
 def split_movies_data(df):
     '''
-    Function splits dataframe into train, validate & test
+    Function splits dataframe into train, validate & test (56% : 24% : 20% respectively)
     NOTE--> Stratified on vote count
     '''
     
@@ -118,7 +118,7 @@ def wrangle_movies_data(df):
     # Split the data
     train, validate, test = split_movies_data(df)
     
-    return train, test, validate
+    return train, validate, test
 
     
 # def get_modeling_data():
