@@ -16,6 +16,9 @@ def prep_data(df):
     # convert release date to a date-time format. another option is to_datetime
     # fills values less than one million with the median value, 10000000
     df['budget'] = np.where(df['budget'].between(0,1000000), df['budget'].median(), df['budget'])
+    # extract the release year before converting to date-time
+    df['release_year'] = df.release_date.apply(lambda x : x.split('-')[0]).astype(int)
+    # convert to a datetime format. Consider to_datetime as well. 
     df['release_date'] = df['release_date'].astype('datetime64[ns]')
     # movie is successful if (revenue >= budget * 2)
     for index, row in df.iterrows():
