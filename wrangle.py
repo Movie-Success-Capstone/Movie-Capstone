@@ -6,8 +6,8 @@ def wrangle_df(use_cache=True):
     
     if os.path.exists('clean.csv') and use_cache:
         print('Using cached CSV')
-        return pd.read_csv('clean.csv')
-    
+        return pd.read_csv('clean.csv', index_col='id')
+
     print('clean.csv not detected.')
     print('Acquiring and Preparing Data')
     
