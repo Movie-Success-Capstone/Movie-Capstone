@@ -5,8 +5,11 @@ from datetime import date
 
 def prep_data(df):
     
-    #drop the initial column, which provides nothing of value
-    #df.drop(['Unnamed: 0'], axis=1, inplace=True)
+    # drop columns that do not inform our decision-making process
+    df.drop(columns=['Unnamed: 0', 'adult', 'belongs_to_collection',
+                 'homepage', 'original_language', 'original_title',
+                 'poster_path', 'spoken_languages', 'status', 'tagline', 'video', 'cast',
+                 'crew'], inplace=True)
     # drop all na values (sought other method, but it wasn't more effective
     df.dropna(axis=0, inplace=True)
     # by first sorting df descending from budget, it will keep more valuable values in next step
@@ -14,7 +17,6 @@ def prep_data(df):
     # keep only the first instances of duplicates, now that they are sorted. 
     df.drop_duplicates(subset=None, keep='first', inplace=True, ignore_index=True)
     df['genres'] = df['genres'].apply(lambda x: ' '.join([i['name'] for i in eval(x)]))
-    # convert release date to a date-time format. another option is to_datetime
     # fills values less than one million with the median value, 10000000
     df['budget'] = np.where(df['budget'].between(0,1000000), df['budget'].median(), df['budget'])
     # extract the release year before converting to date-time
@@ -38,12 +40,7 @@ def prep_data(df):
     df['profitable'] = df['profitable'].astype(bool)
     
     # Set 'release_date' as index & sort values
-    #df = df.set_index('release_date').sort_index()
-    
-    # one problem with using this approach initially is that it removes our ability
-    # to extract some names (assuming we want to) 
-    # Lowercase all data in dataframe
-    #df = df.applymap(lambda s: s.lower() if type(s) == str else s)
+    df = df.set_index('release_date').sort_index()
     
     return df
     
