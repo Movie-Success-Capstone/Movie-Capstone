@@ -14,12 +14,12 @@ def prep_data(df):
     # keep only the first instances of duplicates, now that they are sorted. 
     df.drop_duplicates(subset=None, keep='first', inplace=True, ignore_index=True)
     # convert release date to a date-time format. another option is to_datetime
+    # fills values less than one million with the median value, 10000000
+    df2['budget'] = np.where(df['budget'].between(0,1000000), df['budget'].median(), df['budget'])
     df['release_date'] = df['release_date'].astype('datetime64[ns]')
-    # Replace white space values with NaN values.
-    df = df.replace(r'^\s*$', np.nan, regex = True)
     # Set 'release_date' as index & sort values
-    df = df.set_index('release_date').sort_index()
-    # Lower all data in dataframe
+    #df = df.set_index('release_date').sort_index()
+    # Lowercase all data in dataframe
     df = df.applymap(lambda s: s.lower() if type(s) == str else s)
     
     return df
