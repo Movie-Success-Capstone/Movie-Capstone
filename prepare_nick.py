@@ -42,13 +42,15 @@ def prep_data(df):
     df['success_rating'] = (df['revenue']/(df['budget'] * 2)) * df['vote_average'] 
     df['success'] = df['success_rating'] > 6.5
     
+    df['profit_amount'] = df.revenue - df.budget
+    
     df = df[['title', 'success', 'success_rating', 'genres', 'cast_actor_1',
              'cast_actor_2', 'cast_actor_3', 'total_n_cast','budget', 'revenue',
-             'vote_average', 'vote_count', 'production_companies',
+             'profit_amount', 'id', 'vote_average', 'vote_count', 'production_companies',
              'production_countries','overview', 'popularity', 'runtime',
-             'profitable', 'release_date', 'release_year', 'runtime']]
+             'profitable', 'release_date', 'release_year', 'runtime', 'imdb_id']]
     
-    df['profit_amount'] = df.revenue - df.budget
+    df = df.set_index('id').sort_index()
     
     return df
     
