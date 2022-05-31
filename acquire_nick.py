@@ -34,7 +34,7 @@ def acquire_data(use_cache=True):
 
     # When there's no cached csv, read the following query from Codeup's SQL database.
     print('Capstone CSV not detected.')
-    print('reading dirty CSVs: credits and movies_meetadta')
+    print('reading dirty CSVs: credits and movies_metadata')
     
     df = pd.read_csv('credits.csv')
     df2 = pd.read_csv('movies_metadata.csv')
