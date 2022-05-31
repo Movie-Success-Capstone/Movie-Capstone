@@ -3,7 +3,15 @@ import numpy as np
 from collections import Counter
 from datetime import date
 
-def prep_data(df):
+def prep_data(df, use_cache=True):
+    # If the cached parameter is True, read the csv file on disk in the same folder as this file 
+    if os.path.exists('clean.csv') and use_cache:
+        print('Using clean CSV')
+        return pd.read_csv('clean.csv')
+
+    # When there's no cached csv, read the following query from Codeup's SQL database.
+    print('Clean CSV not detected.')
+    print('Reading raw capstone.csv')
     
     # drop columns that do not inform our decision-making process
     df.drop(columns=['adult', 'belongs_to_collection',
@@ -51,6 +59,8 @@ def prep_data(df):
              'profitable', 'release_date', 'release_year', 'runtime', 'imdb_id']]
     
     df = df.set_index('id').sort_index()
+    
+    df.to_csv('clean.csv')
     
     return df
     
