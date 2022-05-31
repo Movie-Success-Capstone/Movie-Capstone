@@ -48,6 +48,7 @@ def prep_data(df):
              'production_countries','overview', 'popularity', 'runtime',
              'profitable', 'release_date', 'release_year', 'runtime']]
     
+    df['profit_amount'] = df.revenue - df.budget
     df = df.set_index('id').sort_index()
     
     return df
