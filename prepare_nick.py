@@ -17,8 +17,27 @@ def prep_data(df):
     # fills values less than one million with the median value, 10000000
     df['budget'] = np.where(df['budget'].between(0,1000000), df['budget'].median(), df['budget'])
     df['release_date'] = df['release_date'].astype('datetime64[ns]')
+    # movie is successful if (revenue >= budget * 2)
+    for index, row in df.iterrows():
+        try:
+            budget = df.at[index, 'budget']
+            revenue = df.at[index, 'revenue']
+            if (revenue >= budget * 2):
+                profitable = True
+            else:
+                profitable = False
+        except:     # if budget or revenue is empty
+            profitable = np.nan
+    
+        df.at[index, 'profitable'] = profitable
+    # convert from object to bool. May set to binary later.  
+    df['profitable'] = df['profitable'].astype(bool)
+    
     # Set 'release_date' as index & sort values
     #df = df.set_index('release_date').sort_index()
+    
+    # one problem with using this approach initially is that it removes our ability
+    # to extract some names (assuming we want to) 
     # Lowercase all data in dataframe
     #df = df.applymap(lambda s: s.lower() if type(s) == str else s)
     
