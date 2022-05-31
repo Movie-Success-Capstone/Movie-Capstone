@@ -6,7 +6,7 @@ from datetime import date
 def prep_data(df):
     
     # drop columns that do not inform our decision-making process
-    df.drop(columns=['Unnamed: 0', 'adult', 'belongs_to_collection',
+    df.drop(columns=['adult', 'belongs_to_collection',
                  'homepage', 'original_language', 'original_title',
                  'poster_path', 'spoken_languages', 'status', 'tagline', 'video', 'cast',
                  'crew'], inplace=True)

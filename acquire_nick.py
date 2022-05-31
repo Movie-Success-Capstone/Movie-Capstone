@@ -28,7 +28,7 @@ def acquire_data(use_cache=True):
     get us through Tuesday. 
     """
     # If the cached parameter is True, read the csv file on disk in the same folder as this file 
-    if os.path.exists('capston.csv') and use_cache:
+    if os.path.exists('capstone.csv') and use_cache:
         print('Using cached CSV')
         return pd.read_csv('capstone.csv')
 
@@ -60,7 +60,7 @@ def acquire_data(use_cache=True):
     df2['production_companies'] = df2['production_companies']\
     .apply(lambda x: ' '.join([i['name'].replace(' ', '') for i in eval(x)]))
     # extract production countries from the nested dictionary.
-    df4['production_countries'] = df4['production_countries']\
+    df2['production_countries'] = df2['production_countries']\
     .apply(lambda x: ' '.join([i['name'].replace(' ', '') for i in eval(x)]))
     # weird instances that make conversion impossible
     df2 = df2[df2['id'] != '1997-08-20']
