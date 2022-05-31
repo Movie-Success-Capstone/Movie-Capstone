@@ -39,8 +39,16 @@ def prep_data(df):
     # convert from object to bool. May set to binary later.  
     df['profitable'] = df['profitable'].astype(bool)
     
-    # Set 'release_date' as index & sort values
-    df = df.set_index('release_date').sort_index()
+    df['success_rating'] = (df['revenue']/(df['budget'] * 2)) * df['vote_average'] 
+    df['success'] = df['success_rating'] > 6.5
+    
+    df = df[['title', 'success', 'success_rating', 'genres', 'cast_actor_1',
+             'cast_actor_2', 'cast_actor_3', 'total_n_cast','budget', 'revenue',
+             'vote_average', 'vote_count', 'production_companies',
+             'production_countries','overview', 'popularity', 'runtime',
+             'profitable', 'release_date', 'release_year', 'runtime']]
+    
+     df = df.set_index('id').sort_index()
     
     return df
     
