@@ -7,6 +7,7 @@ env.py
 __pycache__
 *.xlsx
 
+*.json
 *.csv
 *.tsv
 *.gz
