@@ -33,8 +33,8 @@ def acquire_data(use_cache=True):
         return pd.read_csv('capstone.csv')
 
     # When there's no cached csv, read the following query from Codeup's SQL database.
-    print('CSV not detected.')
-    print('reading other CSVs')
+    print('Capstone CSV not detected.')
+    print('reading dirty CSVs: credits and movies_meetadta')
     
     df = pd.read_csv('credits.csv')
     df2 = pd.read_csv('movies_metadata.csv')
@@ -78,7 +78,8 @@ def acquire_data(use_cache=True):
     # removes instances of tv-movies and re-releases, whereby nothing was recorded for revenue.
     # consequently removes many duplicate releases (parts of collections, etc) that were barely reviewed
     data = data[data['revenue'] >=1]
+    df = data.reset_index()
     # creates a csv 
-    data.to_csv('capstone.csv')
+    df.to_csv('capstone.csv')
     
-    return data
+    return df
