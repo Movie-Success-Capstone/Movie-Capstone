@@ -6,7 +6,7 @@ from datetime import date
 def prep_data(df):
     
     #drop the initial column, which provides nothing of value
-    df.drop(['Unnamed: 0'], axis=1, inplace=True)
+    #df.drop(['Unnamed: 0'], axis=1, inplace=True)
     # drop all na values (sought other method, but it wasn't more effective
     df.dropna(axis=0, inplace=True)
     # by first sorting df descending from budget, it will keep more valuable values in next step
