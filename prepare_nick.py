@@ -13,6 +13,7 @@ def prep_data(df):
     df = df.sort_values(by='budget', ascending=False, na_position='last')
     # keep only the first instances of duplicates, now that they are sorted. 
     df.drop_duplicates(subset=None, keep='first', inplace=True, ignore_index=True)
+    df['genres'] = df['genres'].apply(lambda x: ' '.join([i['name'] for i in eval(x)]))
     # convert release date to a date-time format. another option is to_datetime
     # fills values less than one million with the median value, 10000000
     df['budget'] = np.where(df['budget'].between(0,1000000), df['budget'].median(), df['budget'])
