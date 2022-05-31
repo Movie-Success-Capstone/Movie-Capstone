@@ -5,11 +5,24 @@ from datetime import date
 
 def prep_data(df):
     
+    #drop the initial column, which provides nothing of value
     df.drop(['Unnamed: 0'], axis=1, inplace=True)
+    # drop all na values (sought other method, but it wasn't more effective
     df.dropna(axis=0, inplace=True)
+    # by first sorting df descending from budget, it will keep more valuable values in next step
+    df = df.sort_values(by='budget', ascending=False, na_position='last')
+    # keep only the first instances of duplicates, now that they are sorted. 
     df.drop_duplicates(subset=None, keep='first', inplace=True, ignore_index=True)
+    # convert release date to a date-time format. another option is to_datetime
     df['release_date'] = df['release_date'].astype('datetime64[ns]')
+    # Replace white space values with NaN values.
+    df = df.replace(r'^\s*$', np.nan, regex = True)
+    # Set 'release_date' as index & sort values
+    df = df.set_index('release_date').sort_index()
+    # Lower all data in dataframe
+    df = df.applymap(lambda s: s.lower() if type(s) == str else s)
     
+    return df
     
     
     
