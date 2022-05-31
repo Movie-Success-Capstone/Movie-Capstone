@@ -2,16 +2,17 @@ import pandas as pd
 import numpy as np
 from collections import Counter
 from datetime import date
+import os
 
 def prep_data(df, use_cache=True):
     # If the cached parameter is True, read the csv file on disk in the same folder as this file 
     if os.path.exists('clean.csv') and use_cache:
-        print('Using clean CSV')
+        print('clean.csv detected. \n Dataframe available.')
         return pd.read_csv('clean.csv')
 
     # When there's no cached csv, read the following query from Codeup's SQL database.
-    print('Clean CSV not detected.')
-    print('Reading raw capstone.csv')
+    print('clean.csv not detected.')
+    print('processing capstone.csv')
     
     # drop columns that do not inform our decision-making process
     df.drop(columns=['adult', 'belongs_to_collection',
@@ -61,6 +62,7 @@ def prep_data(df, use_cache=True):
     df = df.set_index('id').sort_index()
     
     df.to_csv('clean.csv')
+    print('clean.csv ready for future use')
     
     return df
     
