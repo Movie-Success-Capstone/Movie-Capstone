@@ -9,6 +9,7 @@
   <li><a href = '#prep'>Preparation </a></li>
   <li><a href = '#explore'>Exploration </a></li>
   <li><a href = '#model'>Modeling </a></li>
+  <li><a href = '#conclusion'>Conclusion and Summary </a></li>
   <li><a href = '#steps'>Steps to Reproduce </a></li>
   <li><a href = '#appnx'>Appendix </a></li>
 </ul>
@@ -101,7 +102,14 @@ Once we explore the data, we will look for any trends that show over the past 2 
 <!-- </div> -->
 <!-- End Modeling here  -->
 
-
+<!-- <div id = 'conclusion'> -->
+## Conclusion And Recommendations 
+<details>
+<summary>Expand</summary>
+    Conclusion goes here...
+</details>
+<!-- </div> -->
+<!-- End Conclusion here  -->
 
 <!-- <div id = 'steps'> -->
 ## Steps to Reproduce Project 
