@@ -1,5 +1,4 @@
 # Movie Ratings Capstone Project
-<hr>
 <details>
 <summary>Table of Contents</summary>
 <ul>
