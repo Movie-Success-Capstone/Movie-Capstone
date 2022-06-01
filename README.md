@@ -18,7 +18,6 @@
 
 <!-- <div id = 'intro'> -->
 ## Introduction 
-<hr>
 
 <details>
 <summary>Expand</summary>
@@ -32,7 +31,6 @@ Once we explore the data, we will look for any trends that show over the past 2 
 
 <!-- <div id = 'dict'> -->
 ## Data Dictionary
-<hr>
 
 <details>
 <summary>Expand</summary>
@@ -56,7 +54,6 @@ Once we explore the data, we will look for any trends that show over the past 2 
 
 <!-- <div id = 'plan'> -->
 ## Planning Phase
-<hr>
 <details>
 <summary>Expand</summary>
     Planning text goes here...
@@ -66,7 +63,6 @@ Once we explore the data, we will look for any trends that show over the past 2 
 
 <!-- <div id = 'acquire'> -->
 ## Data Acquisition
-<hr>
 <details>
 <summary>Expand</summary>
     Acquisition text goes here...
@@ -78,7 +74,6 @@ Once we explore the data, we will look for any trends that show over the past 2 
 
 <!-- <div id = 'prep'> -->
 ## Data Praparation 
-<hr>
 <details>
 <summary>Expand</summary>
     Prepare goes here...
@@ -89,7 +84,6 @@ Once we explore the data, we will look for any trends that show over the past 2 
 
 <!-- <div id = 'explore'> -->
 ## Exploration And Feature Engineering 
-<hr>
 <details>
 <summary>Expand</summary>
     Explore goes here...
@@ -101,7 +95,6 @@ Once we explore the data, we will look for any trends that show over the past 2 
 
 <!-- <div id = 'model'> -->
 ## Modeling 
-<hr>
 <details>
 <summary>Expand</summary>
     Modeling goes here...
@@ -113,7 +106,6 @@ Once we explore the data, we will look for any trends that show over the past 2 
 
 <!-- <div id = 'steps'> -->
 ## Steps to Reproduce Project 
-<hr>
 <details>
 <summary>Expand</summary>
   <ol>
@@ -128,7 +120,6 @@ Once we explore the data, we will look for any trends that show over the past 2 
     
 <!-- <div id = 'appnx'> -->
 ## Appendix 
-<hr>
 <details>
 <summary>Links</summary>
     <a href = 'https://github.com/Movie-Success-Capstone/Movie-Capstone'>Github</a>
