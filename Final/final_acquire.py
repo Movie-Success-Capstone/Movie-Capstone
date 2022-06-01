@@ -6,6 +6,10 @@ import os
 import ast
 from collections import Counter
 from datetime import date
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split
+
 
 #------------------------------------------------------------##------------------------------------------------------------#
 
@@ -315,7 +319,7 @@ def wrangle_df(use_cache=True):
     print('clean.csv not detected.')
     print('Acquiring and Preparing Data')
     
-    df = prep_data(acquire_data())
+    df = prep_data(acquire_data_new())
     
     return df
 
