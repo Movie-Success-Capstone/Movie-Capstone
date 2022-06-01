@@ -64,19 +64,19 @@ def prep_data(df, use_cache=True):
              'profitable', 'release_date', 'release_year', 'imdb_id']]
     
     # One Hot Encode for Genres
-    df['is_genre_adventure'] = df.genres.apply(lambda genre_list: 'Adventure' in genre_list)
-    df['is_genre_horror'] = df.genres.apply(lambda genre_list: 'Horror' in genre_list)
-    df['is_genre_drama'] = df.genres.apply(lambda genre_list: 'Drama' in genre_list)
-    df['is_genre_scifi'] = df.genres.apply(lambda genre_list: 'Science' in genre_list)
-    df['is_genre_romance'] = df.genres.apply(lambda genre_list: 'Romance' in genre_list)
-    df['is_genre_thriller'] = df.genres.apply(lambda genre_list: 'Thriller' in genre_list)
-    df['is_genre_crime'] = df.genres.apply(lambda genre_list: 'Crime' in genre_list)
-    df['is_genre_comedy'] = df.genres.apply(lambda genre_list: 'Comedy' in genre_list)
-    df['is_genre_animation'] = df.genres.apply(lambda genre_list: 'Animation' in genre_list)
-    df['is_genre_action'] = df.genres.apply(lambda genre_list: 'Action' in genre_list)
-    df['is_genre_mystery'] = df.genres.apply(lambda genre_list: 'Mystery' in genre_list)
-    df['is_genre_fantasy'] = df.genres.apply(lambda genre_list: 'Fantasy' in genre_list)
-    df['is_genre_documentary'] = df.genres.apply(lambda genre_list: 'Documentary' in genre_list)
+    df['is_genre_adventure'] = df.genres.apply(lambda genre_list: 'Adventure' in genre_list) * 1
+    df['is_genre_horror'] = df.genres.apply(lambda genre_list: 'Horror' in genre_list) * 1
+    df['is_genre_drama'] = df.genres.apply(lambda genre_list: 'Drama' in genre_list) * 1
+    df['is_genre_scifi'] = df.genres.apply(lambda genre_list: 'Science' in genre_list) * 1
+    df['is_genre_romance'] = df.genres.apply(lambda genre_list: 'Romance' in genre_list) * 1
+    df['is_genre_thriller'] = df.genres.apply(lambda genre_list: 'Thriller' in genre_list) * 1
+    df['is_genre_crime'] = df.genres.apply(lambda genre_list: 'Crime' in genre_list) * 1
+    df['is_genre_comedy'] = df.genres.apply(lambda genre_list: 'Comedy' in genre_list) * 1
+    df['is_genre_animation'] = df.genres.apply(lambda genre_list: 'Animation' in genre_list) * 1
+    df['is_genre_action'] = df.genres.apply(lambda genre_list: 'Action' in genre_list) * 1
+    df['is_genre_mystery'] = df.genres.apply(lambda genre_list: 'Mystery' in genre_list) * 1
+    df['is_genre_fantasy'] = df.genres.apply(lambda genre_list: 'Fantasy' in genre_list) * 1
+    df['is_genre_documentary'] = df.genres.apply(lambda genre_list: 'Documentary' in genre_list) * 1
     
     df = df.set_index('id').sort_index()
     
