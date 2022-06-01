@@ -18,7 +18,7 @@ def wrangle_df(use_cache=True):
 
 def train_validate_test_split(df):
     ''' 
-    This function takes in a dataframe and splits it 80:20.  The 20% will be our testing datafrme for our final model.  The 80% will be split a second time (70:30), creating our final training dataframe and a dataframe to validate our model with before testing.  Leaving us we a Train (56%), Validate(24%) and Test (20%) Dataframe from our original data (100%)
+    This function takes in a dataframe and splits it 80:20.  The 20% will be our testing dataframe for our final model.  The 80% will be split a second time (70:30), creating our final training dataframe and a dataframe to validate our model with before testing.  Leaving us we a Train (56%), Validate(24%) and Test (20%) Dataframe from our original data (100%)
     '''
     
     train, test = train_test_split(df, 
