@@ -149,10 +149,12 @@ def prep_data(df, use_cache=True):
         df.at[index, 'profitable'] = profitable
     # convert from object to bool. May set to binary later.  
     df['profitable'] = df['profitable'].astype(bool)
-    
+    # convert bool to int, 0 = false 1 = true
+    df['profitable'] = df['profitable']*1
     df['success_rating'] = (df['revenue']/(df['budget'] * 2)) * df['vote_average'] 
     df['success'] = df['success_rating'] > 6.5
-    
+    # convert success to int, 0 = false, 1 = true
+    df['success'] = df['success']*1
     df['profit_amount'] = df.revenue - df.budget
     
     df = df[['title', 'success', 'success_rating', 'genres', 'cast_actor_1',
