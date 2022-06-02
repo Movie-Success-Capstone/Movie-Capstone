@@ -69,6 +69,7 @@ The data for this project was acquired from open-source Kaggle website- https://
 > - Movies_metadata.csv
 > - Keywords.csv
 > - Ratings.csv
+    
 In the prepare phase in this README.md file, we will describe the joining procedure followed in the joining of these separate csv files into  of the final dataframe.
 </details>
 </div>
