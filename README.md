@@ -30,7 +30,7 @@ Once we explore the data, we will look for any trends that show over the past 2 
 </details>
 <!-- </div> -->
 <!-- End Introduction here  -->
-
+<hr>
 <!-- <div id = 'dict'> -->
 ## Data Dictionary
 
@@ -53,7 +53,7 @@ Once we explore the data, we will look for any trends that show over the past 2 
 <!-- </div>  -->
 <!-- End Data Dictionary here  -->
 
-
+<hr>
 <!-- <div id = 'plan'> -->
 ## Planning Phase
 <details>
@@ -90,6 +90,7 @@ This project aims to achieve the main goal of modeling the prediction of success
 <!-- </div> -->
 <!-- End Planning here  -->
 
+<hr>
 <!-- <div id = 'acquire'> -->
 ## Data Acquisition
 <details>
@@ -107,7 +108,7 @@ In the prepare phase in this README.md file, we will describe the joining proced
 </div>
 <!-- End Acquire here  -->
 
-
+<hr>
 <!-- <div id = 'prep'> -->
 ## Data Praparation 
 <details>
@@ -119,7 +120,7 @@ Data wrangling (preparation) for the iMDb involved several steps
 <!-- </div> -->
 <!-- End Prepare here  -->
 
-
+<hr>
 <!-- <div id = 'explore'> -->
 ## Exploration And Feature Engineering 
 <details>
@@ -129,8 +130,7 @@ Data wrangling (preparation) for the iMDb involved several steps
 <!-- </div> -->
 <!-- End Explore here  -->
 
-
-
+<hr>
 <!-- <div id = 'model'> -->
 ## Modeling 
 <details>
@@ -140,6 +140,7 @@ Data wrangling (preparation) for the iMDb involved several steps
 <!-- </div> -->
 <!-- End Modeling here  -->
 
+<hr>
 <!-- <div id = 'conclusion'> -->
 ## Conclusion And Recommendations 
 <details>
@@ -149,6 +150,7 @@ Data wrangling (preparation) for the iMDb involved several steps
 <!-- </div> -->
 <!-- End Conclusion here  -->
 
+<hr>
 <!-- <div id = 'steps'> -->
 ## Steps to Reproduce Project 
 <details>
@@ -162,7 +164,7 @@ Data wrangling (preparation) for the iMDb involved several steps
 <!-- </div> -->
 <!-- End Steps here  -->
   
-    
+<hr>    
 <!-- <div id = 'appnx'> -->
 ## Appendix 
 <details>
