@@ -1,9 +1,11 @@
 # Movie Ratings Capstone Project
-<details>
+
 Navigation: 
     
-    To view more details on any specific section, please click the 'Expand' drop-down arrow. 
+    To view more details on any specific section, please click the 'Expand' drop-down arrow.
     
+<details>
+ 
 <summary>Table of Contents</summary>
 <ul>
   <li><a href = '#intro'>Introduction</a></li>
