@@ -65,8 +65,12 @@ Text goes here...
     
 ## (b). Project Description
 Text goes here...    
- 
-## (c). Exploration Questions of interest
+    
+## (c). Methodology
+    
+    Plan >> Acquire >> Prepare >> Explore >> Model >> Deliver
+    
+## (d). Exploration Questions of interest
     
 > - Is there a relationship between budget and revenue?
 > - How runtime affect movie success?
@@ -75,11 +79,11 @@ Text goes here...
 > - Which genre has the highest profit? Or top 5?
 > - How does production company affect profit?
     
-## (d). Target Variable 
+## (e). Target Variable 
 Text goes here
    
     
-## (c). Stakeholders
+## (f). Stakeholders
 > - Movie producers and interested general public
     
 </details>   
