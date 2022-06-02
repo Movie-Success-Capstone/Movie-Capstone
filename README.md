@@ -74,9 +74,9 @@ Once we explore the data, we will look for any trends that show over the past 2 
 | Cast_actor_2  | ............  | Object  |    
 | Cast_actor_3  | ............  | Object  |
 | Total_n_cast  | ..............  | Float64  |
-| Release_year  | The year a specific movie was released for general public consumption/ enjoyment  | int64**  |
+| Release_year  | The year a specific movie was released for general public consumption/ enjoyment  | Int64**  |
 | Month  | Month of the year a movie was released to general public  | int64**  |
-| Runtime.1  | ..........  | Content Cell  |
+| Runtime.1  | ..........  | Float64  |
 
     
 </details>
