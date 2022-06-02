@@ -20,9 +20,7 @@
 ## Introduction 
 
 <details>
-<summary>Expand</summary>
-SAMPLE TEXT 
-    
+<summary>Expand</summary>    
 Using the data available from the iMDb API, our team intends to compare different features of movies made between the year 2000 and present day in an attempt to determine the key features that might predict how successful the movie is(Success being measured by iMBd scores/public ratings). 
 Once we explore the data, we will look for any trends that show over the past 2 decades that may have affected what makes a movie successful.  In those 20 years, streaming has risen in popularity, consumer tastes have changed and even how movies are structured has changed(cinematic universes), all of which may have altered what causes a movie's success. Taking these into account, we can build a model that can predict a movie's success rate , thus giving insight into how to outline movies for maximum success in the theaters.   
 </details>
@@ -65,8 +63,12 @@ Once we explore the data, we will look for any trends that show over the past 2 
 ## Data Acquisition
 <details>
 <summary>Expand</summary>
-    Acquisition text goes here...
-
+The data for this project was acquired from open-source Kaggle website- https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset. This set consisted of more than 5000 data points with 28 attributes. At this time, no Application Programming Interface (API) is utelized in streamlined acquisition process due to required Imdb policies, however, in the future project updates we intend to implements APIs in simplicity of rep-producing this preject. With this stated, directly download and save locally in the same project folder the following comma-sepated files(csv):
+    - Credits.csv 
+    - Movies_metadata.csv
+    - Keywords.csv
+    - Ratings.csv
+In the prepare phase in this README.md file, we will describe the joining procedure followed in the joining of these separate csv files into  of the final dataframe.
 </details>
 </div>
 <!-- End Acquire here  -->
