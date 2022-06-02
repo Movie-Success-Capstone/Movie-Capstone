@@ -87,8 +87,8 @@ Once we explore the data, we will look for any trends that show over the past 2 
 
 <!-- <div id = 'plan'> -->
 ## Planning Phase
-<details>
-<summary>Expand</summary>
+<!-- <details>
+<summary>Expand</summary> -->
     
 This project aims to achieve the main goal of modeling the prediction of successful movies by applications of scientific, statistical and adaptations of business logic in formation of this final model. A thorough thoughout planning phase involved several main considerations as follows:
     
@@ -117,7 +117,7 @@ This project aims to achieve the main goal of modeling the prediction of success
 #### (f). Stakeholders
 > - Movie producers and interested general public
     
-</details>   
+<!-- </details>    -->
 <!-- </div> -->
 <!-- End Planning here  -->
 
