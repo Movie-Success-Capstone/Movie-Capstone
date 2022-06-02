@@ -41,7 +41,7 @@ Once we explore the data, we will look for any trends that show over the past 2 
 #### Original Dataset
     
 | Feature  | Description | Data Type | 
-| :-------------: | :-------------: | :-------------: |
+| :------------- | :------------- | :------------- |
 | Title  | Content Cell  | Object  |
 | Success  | Content Cell  | Bool  |
 | Success_rating  | Content Cell  | Float64  |
@@ -63,7 +63,7 @@ Once we explore the data, we will look for any trends that show over the past 2 
 #### Engineered Features
     
 | Feature  | Description | Data Type | 
-| :-------------: | :-------------: | :-------------: |
+| :------------- | :------------- | :------------- |
 | Cast_actor_1  | Content Cell  | Object  |
 | Cast_actor_2  | Content Cell  | Object  |    
 | Cast_actor_3  | Content Cell  | Object  |
