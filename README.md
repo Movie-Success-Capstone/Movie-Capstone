@@ -109,7 +109,7 @@ This project aims to achieve the main goal of modeling the prediction of success
     Text goes here
    
 #### (f). Stakeholders
-    > - Movie producers and interested general public
+> - Movie producers and interested general public
     
 </details>   
 <!-- </div> -->
