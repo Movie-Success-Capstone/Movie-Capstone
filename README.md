@@ -61,7 +61,7 @@ Once we explore the data, we will look for any trends that show over the past 2 
     
 | Feature  | Description | Data Type | 
 | :------------- | :------------- | :------------- |
-| Success  | Content Cell  | Bool  |
+| Success  | ...........  | Bool  |
 | Profit_amount  | U.S. dollar amount calculated from subtracting budget from revenue  | Float64  |
 | Profitable  | ..........  | Bool  |
 | Cast_actor_1  | ............  | Object  |
