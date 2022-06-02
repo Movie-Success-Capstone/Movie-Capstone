@@ -63,11 +63,12 @@ Once we explore the data, we will look for any trends that show over the past 2 
 ## Data Acquisition
 <details>
 <summary>Expand</summary>
-The data for this project was acquired from open-source Kaggle website- https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset. This set consisted of more than 5000 data points with 28 attributes. At this time, no Application Programming Interface (API) is utelized in streamlined acquisition process due to required Imdb policies, however, in the future project updates we intend to implements APIs in simplicity of rep-producing this preject. With this stated, directly download and save locally in the same project folder the following comma-sepated files(csv):
-    - Credits.csv 
-    - Movies_metadata.csv
-    - Keywords.csv
-    - Ratings.csv
+The data for this project was acquired from open-source Kaggle website- https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset. This set consisted of more than 5000 data points with 28 attributes. At this time, no Application Programming Interface (API) is utelized in streamlined acquisition process due to required iMDb policies, however, in the future project updates we intend to implements APIs in simplicity of rep-producing this preject. With this stated, directly download and save locally in the same project folder the following comma-sepated files(csv):
+    
+> - Credits.csv 
+> - Movies_metadata.csv
+> - Keywords.csv
+> - Ratings.csv
 In the prepare phase in this README.md file, we will describe the joining procedure followed in the joining of these separate csv files into  of the final dataframe.
 </details>
 </div>
