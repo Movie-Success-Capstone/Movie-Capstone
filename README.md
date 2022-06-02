@@ -60,29 +60,29 @@ Once we explore the data, we will look for any trends that show over the past 2 
 <summary>Expand</summary>
 Planning text goes here...
     
-    ## (a). Project Goal
+## (a). Project Goal
     Text goes here...    
     
-    ## (b). Project Description
+## (b). Project Description
     Text goes here...    
     
-    ## (c). Methodology
+## (c). Methodology
     
     Plan >> Acquire >> Prepare >> Explore >> Model >> Deliver
     
-    ## (d). Exploration Questions of interest
+## (d). Exploration Questions of interest
     
-    > - Is there a relationship between budget and revenue?
-    > - How runtime affect movie success?
-    > - What are the top 5 Highest Voted Movies?
-    > - What are top 5 Highest profit movies?
-    > - Which genre has the highest profit? Or top 5?
-    > - How does production company affect profit?
+> - Is there a relationship between budget and revenue?
+> - How runtime affect movie success?
+> - What are the top 5 Highest Voted Movies?
+> - What are top 5 Highest profit movies?
+> - Which genre has the highest profit? Or top 5?
+> - How does production company affect profit?
     
-    ## (e). Target Variable 
+## (e). Target Variable 
     Text goes here
    
-    ## (f). Stakeholders
+## (f). Stakeholders
     > - Movie producers and interested general public
     
 </details>   
