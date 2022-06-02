@@ -38,18 +38,41 @@ Once we explore the data, we will look for any trends that show over the past 2 
 <details>
 <summary>Expand</summary>
       
-| Feature  | Desctiption | Data Type | 
+#### Original Dataset
+    
+| Feature  | Description | Data Type | 
 | :-------------: | :-------------: | :-------------: |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
-| Content Cell  | Content Cell  | Content Cell  |
+| Title  | Content Cell  | Object  |
+| Success  | Content Cell  | Bool  |
+| Success_rating  | Content Cell  | Float64  |
+| Genres  | Content Cell  | Object  |
+| Budget  | Content Cell  | Float64  |
+| Revenue  | Content Cell  | Float64  |
+| Profit_amount  | Content Cell  | Float64  |
+| Vote_average  | Content Cell  | Float64  |
+| Vote_count  | Content Cell  | Float64  |
+| Production_companies  | Content Cell  | Object  |
+| Production_countries  | Content Cell  | Object  |
+| Overview  | Content Cell  | Object  |
+| Popularity  | Content Cell  | Float64  |
+| Runtime  | Content Cell  | Float64  |
+| Profitable  | Content Cell  | Bool  |
+| Release_date  | Content Cell  | Object  |
+
+    
+#### Engineered Features
+    
+| Feature  | Description | Data Type | 
+| :-------------: | :-------------: | :-------------: |
+| Cast_actor_1  | Content Cell  | Object  |
+| Cast_actor_2  | Content Cell  | Object  |    
+| Cast_actor_3  | Content Cell  | Object  |
+| Total_n_cast  | Content Cell  | Float64  |
+| Release_year  | Content Cell  | int64**  |
+| Month  | Content Cell  | int64**  |
+| Runtime.1  | Content Cell  | Content Cell  |
+
+    
 </details>
 <!-- </div>  -->
 <!-- End Data Dictionary here  -->
