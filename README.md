@@ -20,9 +20,13 @@
 ## Introduction 
 
 <details>
-<summary>Expand</summary>    
+<summary>Expand</summary>  
+    
+### Classification Model for Predicting Movie Success 
+    
 Using the data available from the iMDb API, our team intends to compare different features of movies made between the year 2000 and present day in an attempt to determine the key features that might predict how successful the movie is(Success being measured by iMBd scores/public ratings). 
 Once we explore the data, we will look for any trends that show over the past 2 decades that may have affected what makes a movie successful.  In those 20 years, streaming has risen in popularity, consumer tastes have changed and even how movies are structured has changed(cinematic universes), all of which may have altered what causes a movie's success. Taking these into account, we can build a model that can predict a movie's success rate , thus giving insight into how to outline movies for maximum success in the theaters.   
+    
 </details>
 <!-- </div> -->
 <!-- End Introduction here  -->
@@ -55,6 +59,29 @@ Once we explore the data, we will look for any trends that show over the past 2 
 <details>
 <summary>Expand</summary>
     Planning text goes here...
+    
+## (a). Project Goal
+Text goes here...    
+    
+## (b). Project Description
+Text goes here...    
+ 
+## (c). Exploration Questions of interest
+    
+> - Is there a relationship between budget and revenue?
+> - How runtime affect movie success?
+> - What are the top 5 Highest Voted Movies?
+> - What are top 5 Highest profit movies?
+> - Which genre has the highest profit? Or top 5?
+> - How does production company affect profit?
+    
+## (d). Target Variable 
+Text goes here
+   
+    
+## (c). Stakeholders
+> - Movie producers and interested general public
+    
 </details>   
 <!-- </div> -->
 <!-- End Planning here  -->
@@ -63,6 +90,7 @@ Once we explore the data, we will look for any trends that show over the past 2 
 ## Data Acquisition
 <details>
 <summary>Expand</summary>
+    
 The data for this project was acquired from open-source Kaggle website- https://www.kaggle.com/datasets/rounakbanik/the-movies-dataset. This set consisted of more than 5000 data points with 28 attributes. At this time, no Application Programming Interface (API) is utelized in streamlined acquisition process due to required iMDb policies, however, in the future project updates we intend to implements APIs in simplicity of rep-producing this preject. With this stated, directly download and save locally in the same project folder the following comma-sepated files(csv):
     
 > - Credits.csv 
@@ -80,7 +108,9 @@ In the prepare phase in this README.md file, we will describe the joining proced
 ## Data Praparation 
 <details>
 <summary>Expand</summary>
-    Prepare goes here...
+    
+Data wrangling (preparation) for the iMDb involved several steps 
+
 </details>
 <!-- </div> -->
 <!-- End Prepare here  -->
