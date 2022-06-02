@@ -162,6 +162,8 @@ def prep_data(df, use_cache=True):
              'profit_amount', 'id', 'vote_average', 'vote_count', 'production_companies',
              'production_countries','overview', 'popularity', 'runtime',
              'profitable', 'release_date', 'release_year', 'imdb_id']]
+    # extract first for production company
+    df['production_company'] = df['production_companies'].str.split().str.get(0)
     
     # One Hot Encode for Genres
     df['is_genre_adventure'] = df.genres.apply(lambda genre_list: 'Adventure' in genre_list) * 1
