@@ -58,7 +58,8 @@ Once we explore the data, we will look for any trends that show over the past 2 
 ## Planning Phase
 <details>
 <summary>Expand</summary>
-Planning text goes here...
+    
+This project aims to achieve the main goal of modeling the prediction of successful movies by applications of scientific, statistical and adaptations of business logic in formation of this final model. A thorough thoughout planning phase involved several main considerations as follows:
     
 #### (a). Project Goal
     Text goes here...    
