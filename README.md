@@ -42,35 +42,35 @@ Once we explore the data, we will look for any trends that show over the past 2 
     
 | Feature  | Description | Data Type | 
 | :------------- | :------------- | :------------- |
-| Title  | Content Cell  | Object  |
-| Success  | Content Cell  | Bool  |
-| Success_rating  | Content Cell  | Float64  |
-| Genres  | Content Cell  | Object  |
-| Budget  | Content Cell  | Float64  |
-| Revenue  | Content Cell  | Float64  |
-| Profit_amount  | Content Cell  | Float64  |
-| Vote_average  | Content Cell  | Float64  |
-| Vote_count  | Content Cell  | Float64  |
-| Production_companies  | Content Cell  | Object  |
-| Production_countries  | Content Cell  | Object  |
-| Overview  | Content Cell  | Object  |
-| Popularity  | Content Cell  | Float64  |
-| Runtime  | Content Cell  | Float64  |
-| Profitable  | Content Cell  | Bool  |
-| Release_date  | Content Cell  | Object  |
+| Title  | Movie title  | Object  |
+| Success_rating  | Scaled parameter iMDb uses to evaluate movie success  | Float64  |
+| Genres  | Movie classification type  | Object  |
+| Budget  | Amount in U.S. dollar spend in the production of the movie  | Float64  |
+| Revenue  | The total U.S. dollar amount collected after a movie release  | Float64  |
+| Vote_average  | ..........  | Float64  |
+| Vote_count  | ...........  | Float64  |
+| Production_companies  | Name(s) of production company tasked with creation of movie  | Object  |
+| Production_countries  | Country a movie was marketed/ played   | Object  |
+| Overview  | ...........  | Object  |
+| Popularity  | Scaled numerical measure of perceived movie likability  | Float64  |
+| Runtime  | Recorded movie play-time. (How long the movie is)  | Float64  |
+| Release_date  | Specific calendar date a movie was released. (YYYY-MM-DD)  | Object  |
 
     
 #### Engineered Features
     
 | Feature  | Description | Data Type | 
 | :------------- | :------------- | :------------- |
-| Cast_actor_1  | Content Cell  | Object  |
-| Cast_actor_2  | Content Cell  | Object  |    
-| Cast_actor_3  | Content Cell  | Object  |
-| Total_n_cast  | Content Cell  | Float64  |
-| Release_year  | Content Cell  | int64**  |
-| Month  | Content Cell  | int64**  |
-| Runtime.1  | Content Cell  | Content Cell  |
+| Success  | Content Cell  | Bool  |
+| Profit_amount  | U.S. dollar amount calculated from subtracting budget from revenue  | Float64  |
+| Profitable  | ..........  | Bool  |
+| Cast_actor_1  | ............  | Object  |
+| Cast_actor_2  | ............  | Object  |    
+| Cast_actor_3  | ............  | Object  |
+| Total_n_cast  | ..............  | Float64  |
+| Release_year  | The year a specific movie was released for general public consumption/ enjoyment  | int64**  |
+| Month  | Month of the year a movie was released to general public  | int64**  |
+| Runtime.1  | ..........  | Content Cell  |
 
     
 </details>
