@@ -1,27 +1,36 @@
+#     ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄               ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
+#    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌             ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+#    ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀              ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌
+#    ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌                       ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌
+#    ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌
+#    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌
+#    ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀█░█▀▀ ▐░█▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀█░█▀▀ ▐░▌       ▐░▌
+#    ▐░▌          ▐░▌     ▐░▌  ▐░▌                       ▐░▌          ▐░▌     ▐░▌  ▐░▌       ▐░▌
+#    ▐░▌          ▐░▌      ▐░▌ ▐░█▄▄▄▄▄▄▄▄▄              ▐░▌          ▐░▌      ▐░▌ ▐░█▄▄▄▄▄▄▄█░▌
+#    ▐░▌          ▐░▌       ▐░▌▐░░░░░░░░░░░▌             ▐░▌          ▐░▌       ▐░▌▐░░░░░░░░░░░▌
+#     ▀            ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀               ▀            ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀ 
+#     ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄ 
+#    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░░▌
+#    ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀  ▀▀▀▀█░█▀▀▀▀ ▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀▀▀ 
+#    ▐░▌          ▐░▌          ▐░▌          ▐░▌               ▐░▌     ▐░▌▐░▌    ▐░▌▐░▌          
+#    ▐░▌          ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄      ▐░▌     ▐░▌ ▐░▌   ▐░▌▐░▌ ▄▄▄▄▄▄▄▄ 
+#    ▐░▌          ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌     ▐░▌     ▐░▌  ▐░▌  ▐░▌▐░▌▐░░░░░░░░▌
+#    ▐░▌          ▐░█▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀█░▌ ▀▀▀▀▀▀▀▀▀█░▌     ▐░▌     ▐░▌   ▐░▌ ▐░▌▐░▌ ▀▀▀▀▀▀█░▌
+#    ▐░▌          ▐░▌                    ▐░▌          ▐░▌     ▐░▌     ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
+#    ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄█░▌ ▄▄▄▄▄▄▄▄▄█░▌ ▄▄▄▄█░█▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
+#    ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░░▌
+#     ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀▀ 
+#                                                                                               
+#----------------------------------------------------------------------------------------------------------|
 import wrangle as w 
 import pandas as pd
 import numpy as np
 import scipy as sc
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.tree import export_text
-from sklearn.metrics import classification_report
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import recall_score, precision_score, f1_score, accuracy_score
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.linear_model import LogisticRegression
-from matplotlib.ticker import ScalarFormatter
+from nick_mod import *
 from sklearn.model_selection import GridSearchCV
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import StratifiedKFold
-
-
+#----------------------------------------------------------------------------------------------------------|
 def create_modeling_df():
     df = w.wrangle_df()
     # obtain ten most frequently occuring companies
@@ -48,7 +57,8 @@ def create_modeling_df():
     print(f'the current shape is {modeling_df.shape}')
     print('please split and then scale this dataframe')
     return modeling_df
-          
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
 def split_and_scale(modeling_df):
     train, validate, test = w.train_validate_test_split(modeling_df)
     X_train = train.drop(columns=['success'])
@@ -78,8 +88,8 @@ def split_and_scale(modeling_df):
     X_test['baseline_prediction'] = 0
     
     return X_train, X_validate, X_test, y_train, y_validate, y_test
-    
-# print grid search results
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
 def print_cv_results(gs, title):
     print('\n -----------------------------------------')
     print(title)
@@ -100,9 +110,7 @@ def print_cv_results(gs, title):
     train_stds = gs.cv_results_['std_train_score']
     for mean, std, params in zip(train_means, train_stds, gs.cv_results_['params']):
         print(f'{mean:.4f} (+/-{std:.3f}) for {params}')
-    print('\n -----------------------------------------')    
-    
-
-        
-    
-    
+    print('\n -----------------------------------------')   
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|    

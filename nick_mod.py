@@ -14,8 +14,7 @@
 #      I M P O R T S
 import pandas as pd
 import numpy as np
-impost matplotlib.pyplot as plt
-from pre_processing_nick import print_cv_results
+import matplotlib.pyplot as plt
 
 from sklearn.model_selection import train_test_split, GridSearchCV, StratifiedKFold
 from sklearn.tree import export_text, DecisionTreeClassifier
@@ -30,7 +29,29 @@ from sklearn import preprocessing
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.feature_selection import SequentialFeatureSelector
 #----------------------------------------------------------------------------------------------------------|
+def print_cv_results(gs, title):
+    print('\n -----------------------------------------')
+    print(title)
 
+    print(f'Best Score = {gs.best_score_:.4f}')
+    print(f'Best Hyper-parameters = {gs.best_params_}')
+    print()
+
+    print('Test Scores:')
+    test_means = gs.cv_results_['mean_test_score']
+    test_stds = gs.cv_results_['std_test_score']
+    for mean, std, params in zip(test_means, test_stds, gs.cv_results_['params']):
+        print(f'{mean:.4f} (+/-{std:.3f}) for {params}')
+    print()
+
+    print('Training Scores:')
+    train_means = gs.cv_results_['mean_train_score']
+    train_stds = gs.cv_results_['std_train_score']
+    for mean, std, params in zip(train_means, train_stds, gs.cv_results_['params']):
+        print(f'{mean:.4f} (+/-{std:.3f}) for {params}')
+    print('\n -----------------------------------------')   
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
 def accuracy_models(X_train, y_train):
     # Logistic Regression
     logReg = LogisticRegression(max_iter=1000)

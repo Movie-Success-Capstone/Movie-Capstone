@@ -1,9 +1,22 @@
+#      ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄ 
+#     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+#     ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ 
+#     ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          
+#     ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ 
+#     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+#     ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀█░█▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀█░█▀▀ ▐░█▀▀▀▀▀▀▀▀▀ 
+#     ▐░▌          ▐░▌     ▐░▌  ▐░▌          ▐░▌          ▐░▌       ▐░▌▐░▌     ▐░▌  ▐░▌          
+#     ▐░▌          ▐░▌      ▐░▌ ▐░█▄▄▄▄▄▄▄▄▄ ▐░▌          ▐░▌       ▐░▌▐░▌      ▐░▌ ▐░█▄▄▄▄▄▄▄▄▄ 
+#     ▐░▌          ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░▌          ▐░▌       ▐░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌
+#      ▀            ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀            ▀         ▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀ 
+#                                                                                                
+#----------------------------------------------------------------------------------------------------------|
 import pandas as pd 
 import numpy as np
 from collections import Counter
 from datetime import date
 import os
-
+#----------------------------------------------------------------------------------------------------------|
 def prep_data(df, use_cache=True):
     # If the cached parameter is True, read the csv file on disk in the same folder as this file 
     if os.path.exists('clean.csv') and use_cache:
@@ -86,11 +99,8 @@ def prep_data(df, use_cache=True):
     print('clean.csv ready for future use')
     
     return df
-    
-    
-    
-    
-    
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|    
 def nulls_by_col(df):
     '''
     This function  takes in a dataframe of observations and attributes(or columns) and returns a dataframe where each row is an atttribute name, the first column is the 
@@ -103,7 +113,8 @@ def nulls_by_col(df):
                                  'percent_rows_missing': prcnt_miss})\
     .sort_values(by='percent_rows_missing', ascending=False)
     return cols_missing.applymap(lambda x: f"{x:0.1f}")
-
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
 def nulls_by_row(df):
     '''
     This function takes in a dataframe and returns a dataframe with 3 columns: the number of columns missing, percent of columns missing, 
@@ -118,7 +129,8 @@ def nulls_by_row(df):
     .rename(index=str, columns={'index': 'num_rows'}).reset_index().set_index('num_cols_missing')\
     .sort_values(by='percent_cols_missing', ascending=False)
     return rows_missing
-
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
 def describe_data(df):
     '''
     This function takes in a pandas dataframe and prints out the shape, datatypes, number of missing values, 
@@ -176,7 +188,8 @@ def describe_data(df):
             print(f'Range of Values: [{df[col].min()} - {df[col].max()}] \n')
         print('------------------------------------------')
         print('--------------------------------------')
-        
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
 def nulls(df):
     '''
     This function takes in a pandas dataframe and prints out the shape, datatypes, number of missing values, 
@@ -202,4 +215,6 @@ def nulls(df):
     print('Row-by-Row Nulls')
     print(nulls_by_row(df))
     print('----------------------')
-
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
