@@ -28,12 +28,11 @@ To view more details on any specific section, please click the 'Expand' drop-dow
 <details>
 <summary>Expand</summary>  
     
-### Cinematic Success: A Matter of Classification
+### Classification Model for Predicting Movie Success 
     
-Cinema is a captivating art form. The traditions, techniques, and practices which envelop this visual medium vary across countless cultures. Some films garner international acclaim; while others are widely discredited as failures. So this begs the question: are there seemingly __universal__ features which help to determine any given film's potential for financial or critical success--whether in terms of income amount generated via film sales (i.e., revenue), consumer feedback, or some other aspect?|         
-Surely, springs of ideas would come to mind for anyone pondering this subject, assuming they keep their eyes peeled: that's attentive viewership in a nutshell. So stick around, audience, until we roll credits. As the exit music plays, we will give you some insights toward predicting how a movie might move money into its makers' pockets and joy into its viewers' hearts.         
-[END SCENE]
-CUT TO: 
+Using the data available from the iMDb API, our team intends to compare different features of movies made between the year 2000 and present day in an attempt to determine the key features that might predict how successful the movie is(Success being measured by iMBd scores/public ratings). 
+Once we explore the data, we will look for any trends that show over the past 2 decades that may have affected what makes a movie successful.  In those 20 years, streaming has risen in popularity, consumer tastes have changed and even how movies are structured has changed(cinematic universes), all of which may have altered what causes a movie's success. Taking these into account, we can build a model that can predict a movie's success rate , thus giving insight into how to outline movies for maximum success in the theaters.   
+    
 </details>
 <!-- </div> -->
 <!-- End Introduction here  -->
@@ -157,17 +156,23 @@ The parent module for both data acquisition and preparation are included in the 
     - Appends names(with whitespace) on genres columns
     - Returns profitable as type bool for explorations
     - Extracts nested dictionary data from columns production_company and cast
+    - One hot ecode data for modeling
     - Feature engineer columns:
     
         * Release_year
         * Release_date
         * Profitable 
-        * Success_rating [(revenue/ budget) * 2] * vote_average 
+        * Success_rating [(revenue / budget) * 2] * vote_average 
         * Success 
         * Profit_amount [revenue - budget]
     
     - Sets dataframe index as __id__
     - Saved a __clean.csv__ file for explorations. 
+    - Explain variables as defined in the project through graphical data dictionary representation
+   
+#### Train_validate_test_split function
+    - Splits the dataset into train, validate, and test sets for exploration and modeling.
+    
     
 </details>
 <!-- </div> -->
@@ -176,12 +181,39 @@ The parent module for both data acquisition and preparation are included in the 
 <hr>
 
 <!-- <div id = 'explore'> -->
-## Exploration And Feature Engineering 
+## Exploration 
 <details>
 <summary>Expand</summary>
-    Explore goes here...
+
+    Reference to the project main goal of model prediction of movie success between 1915 t0 2017, this exploration phase was key in understanding factors that predict movie success. Guiding our predictions, the following questions were initially analyzed to determine pattern and relations among features of interest:
     
+    - Is there a relationship between budget and revenue?
+    - What are the top 5 Highest Voted Movies?
+    - Examining revenue, what are the top 5 highest revenue movies?
+    - Which top 5 movie genres that are likely to yield the highest profits?
     
+#### Key Findings 
+    
+    - Budget and revenue shows elevated corelations
+    - Vote count and also has hightened corellations with both revenue and profit amount
+    - Very little correlation between budget and success rating and also between vote average and budget
+    - Most voted movies are:
+    
+        * Minions
+        * Wonder Woman
+        * Beauty and the Beast
+        * Baby Driver
+        * Big Hero 6
+    
+    - Top 5 most revenue generators movies are:
+        
+        * Avator
+        * Star Wars: The Force Awakens
+        * Titanic
+        * The Avengers
+        * Jurassic World
+
+
 </details>
 <!-- </div> -->
 <!-- End Explore here  -->
@@ -200,7 +232,7 @@ The parent module for both data acquisition and preparation are included in the 
 <hr>
 
 <!-- <div id = 'conclusion'> -->
-## Conclusion And Recommendations 
+## Conclusion and Recommendations 
 <details>
 <summary>Expand</summary>
     Conclusion goes here...
