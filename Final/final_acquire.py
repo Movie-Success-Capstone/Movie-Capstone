@@ -1,5 +1,17 @@
-
+#                 ▄         ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄            ▄▄▄▄▄▄▄▄▄▄▄ 
+#                ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░░▌▐░▌          ▐░░░░░░░░░░░▌
+#                ▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░▌          ▐░█▀▀▀▀▀▀▀▀▀ 
+#                ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌▐░▌    ▐░▌▐░▌          ▐░▌          ▐░▌          
+#                ▐░▌   ▄   ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌ ▐░▌   ▐░▌▐░▌ ▄▄▄▄▄▄▄▄ ▐░▌          ▐░█▄▄▄▄▄▄▄▄▄ 
+#                ▐░▌  ▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌  ▐░▌  ▐░▌▐░▌▐░░░░░░░░▌▐░▌          ▐░░░░░░░░░░░▌
+#                ▐░▌ ▐░▌░▌ ▐░▌▐░█▀▀▀▀█░█▀▀ ▐░█▀▀▀▀▀▀▀█░▌▐░▌   ▐░▌ ▐░▌▐░▌ ▀▀▀▀▀▀█░▌▐░▌          ▐░█▀▀▀▀▀▀▀▀▀ 
+#                ▐░▌▐░▌ ▐░▌▐░▌▐░▌     ▐░▌  ▐░▌       ▐░▌▐░▌    ▐░▌▐░▌▐░▌       ▐░▌▐░▌          ▐░▌          
+#                ▐░▌░▌   ▐░▐░▌▐░▌      ▐░▌ ▐░▌       ▐░▌▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ 
+#                ▐░░▌     ▐░░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌      ▐░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌
+#                 ▀▀       ▀▀  ▀         ▀  ▀         ▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀ 
+#                                                                                                           
 # IMPORTS
+#------------------------------------------------------------##------------------------------------------------------------#
 import pandas as pd
 import numpy as np
 import os 
@@ -21,35 +33,40 @@ from matplotlib.ticker import ScalarFormatter
 from sklearn import preprocessing
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.feature_selection import SequentialFeatureSelector
-
 #------------------------------------------------------------##------------------------------------------------------------#
-
-
 def parse_cast(cast_string):
+    """
+    The cast column for one .csv contains a rather unusual instance of a nested dictionary. 
+    Even converting it to a .json is essentially fruitless, and so this function navigates
+    the anomalous format by implementing Abstract Syntax Trees (AST), through literal evaluation.
+    This function subsequently returns the first three actors appearing in these nests (poo-tee-weet?)
+    via a lambda function. In the event that a film does not have a third actor in its list, the column
+    is given a null value. 
+    """
     # get a python data structure
     data = ast.literal_eval(cast_string)
     # sort by the "order" from the dataset
     data = sorted(data, key=lambda d: d['order'])
     top3 = [cast['name'] for cast in data[:3]]
-    
     # add nulls where there's less than 3 cast members present
     if len(top3) < 3:
         top3 = top3 + [np.nan] * (3 - len(top3))
 
     return pd.Series(top3 + [len(data)], index=['cast_actor_1', 'cast_actor_2', 'cast_actor_3', 'total_n_cast'])
 
-
 #------------------------------------------------------------##------------------------------------------------------------#
-
+#------------------------------------------------------------##------------------------------------------------------------#
 
 def acquire_data(use_cache=True):
     """
-    Note, this docstring needs to be properly written, 
-    but right now it is most important to know that links.csv is hashed out because 
-    to me it seems useless. Maybe there is some utility though, which we can explore later. 
-    As for ratings.csv, it is excluded due to the problems it will cause in my recent
-    attempts to merge it. This is, as such, not necessarily a complete acquire, but one that will
-    get us through Tuesday. 
+    This UDF first checks to see whether or not a particular csv exists, and if it does,
+    if reads it and returns it as a Dataframe. However, if this check fails, it begins 
+    reading the two essential .csvs in someone's local directory, each of which was 
+    taken from Kaggle (for more information, check the README.md). After reading these 
+    dataframes, it performs some necessary extractions, sorting, indexing, ordering, 
+    conversions, column creations, de-duplication, and filtration based on unnecessary
+    information. Once all of this has run the rounds, it returns a somewhat dirty data
+    frame, which will be cleaned via the following prep_data function.
     """
     # If the cached parameter is True, read the csv file on disk in the same folder as this file 
     if os.path.exists('capstone.csv') and use_cache:
@@ -60,6 +77,7 @@ def acquire_data(use_cache=True):
     print('Capstone CSV not detected.')
     print('Reading dirty CSVs: credits and movies_metadata')
     
+    # read these Kaggle csvs from the local directory. If not present, this function will fail. 
     df = pd.read_csv('credits.csv')
     df2 = pd.read_csv('movies_metadata.csv')
     
@@ -90,14 +108,16 @@ def acquire_data(use_cache=True):
     df2 = df2[df2['id'] != '1997-08-20']
     df2 = df2[df2['id'] != '2012-09-29']
     df2 = df2[df2['id'] != '2014-01-01']
+    # convert id to an integer to make it compatible with the other df.
     df2['id'] = df2['id'].astype(int)
-    
+    # a simple merge, on id. 
     df_new = df2.merge(df,on='id')
-    
-    # fixes instances of id duplication
+    # fixes instances of id duplication, first getting counts.
     cnt = df_new.id.value_counts()
     v = cnt[cnt == 1].index.values
+    # remove value counts other than 1 (unique) via query
     test = df_new.query("id in @v")
+    # take this data frame and rename it with a safe copy
     data = test.copy()
     # removes instances of tv-movies and re-releases, whereby nothing was recorded for revenue.
     # consequently removes many duplicate releases (parts of collections, etc) that were barely reviewed
@@ -108,16 +128,21 @@ def acquire_data(use_cache=True):
     
     return df
 
-
-
+#------------------------------------------------------------##------------------------------------------------------------#
 #------------------------------------------------------------##------------------------------------------------------------#
 
-
-
-
-
-
 def prep_data(df, use_cache=True):
+    """
+    Preparation is an extensive process. Like acquire, this function first checks whether or not 
+    a .csv exists on your computer (which it should not in the first iteration, as it reads a csv
+    created by the first runthrough). Following that check, all neccessary forms of preparation
+    and data sanitization are implemented. Null values are handled, instances of zero budget are
+    removed, the remaining duplicates are eradicated, further extrapolation of nested dictionaries
+    are processed, columns are created, the successfulness of a film is weighted and iterated on 
+    a row-by-row basis, boolean groups are established and subsequently converted to ints or floats,
+    genres are one-hot encoded, and lastly, the most valuable columns are subset and retained for 
+    future use. The dataframe is returned and a .csv is created for future reads, saving valuable time.
+    """
     # If the cached parameter is True, read the csv file on disk in the same folder as this file 
     if os.path.exists('clean.csv') and use_cache:
         print('clean.csv detected. \n Dataframe available.')
@@ -190,46 +215,41 @@ def prep_data(df, use_cache=True):
     df['is_genre_mystery'] = df.genres.apply(lambda genre_list: 'Mystery' in genre_list) * 1
     df['is_genre_fantasy'] = df.genres.apply(lambda genre_list: 'Fantasy' in genre_list) * 1
     df['is_genre_documentary'] = df.genres.apply(lambda genre_list: 'Documentary' in genre_list) * 1
-    
+    # set the index based on the unique values of film id
     df = df.set_index('id').sort_index()
-    
+    # create a csv to greatly speed up future analysis. 
     df.to_csv('clean.csv')
     print('clean.csv ready for future use')
     
     return df
-    
-    
-    
-    
-    
-#------------------------------------------------------------##------------------------------------------------------------#    
-    
-    
-    
+   
+#------------------------------------------------------------##------------------------------------------------------------#
+#------------------------------------------------------------##------------------------------------------------------------#
+       
 def nulls_by_col(df):
     '''
-    This function  takes in a dataframe of observations and attributes(or columns) and returns a dataframe where each row is an atttribute name, the first column is the 
-    number of rows with missing values for that attribute, and the second column is percent of total rows that have missing values for that attribute.
+    This function  takes in a dataframe of observations and attributes(or columns) and returns a dataframe where
+    each row is an atttribute name, the first column is the number of rows with missing values for that attribute,
+    and the second column is percent of total rows that have missing values for that attribute.
     '''
+    # sum the nulls
     num_missing = df.isnull().sum()
     rows = df.shape[0]
+    # calcuate the percent missing
     prcnt_miss = (num_missing / rows * 100)
+    # create a dataframe to capture these absences
     cols_missing = pd.DataFrame({'num_rows_missing': num_missing, 
                                  'percent_rows_missing': prcnt_miss})\
     .sort_values(by='percent_rows_missing', ascending=False)
     return cols_missing.applymap(lambda x: f"{x:0.1f}")
 
-
-
 #------------------------------------------------------------##------------------------------------------------------------#
-
-
-
+#------------------------------------------------------------##------------------------------------------------------------#
 
 def nulls_by_row(df):
     '''
-    This function takes in a dataframe and returns a dataframe with 3 columns: the number of columns missing, percent of columns missing, 
-    and number of rows with n columns missing.
+    This function takes in a dataframe and returns a dataframe with 3 columns: the number of columns missing,
+    percent of columns missing, and number of rows with n columns missing.
     '''
     num_missing = df.isnull().sum(axis = 1)
     prcnt_miss = (num_missing / df.shape[1] * 100)
@@ -241,16 +261,14 @@ def nulls_by_row(df):
     .sort_values(by='percent_cols_missing', ascending=False)
     return rows_missing
 
-
-
 #------------------------------------------------------------##------------------------------------------------------------#
-
-
+#------------------------------------------------------------##------------------------------------------------------------#
 
 def describe_data(df):
     '''
     This function takes in a pandas dataframe and prints out the shape, datatypes, number of missing values, 
-    columns and their data types, summary statistics of numeric columns in the dataframe, as well as the value counts for categorical variables.
+    columns and their data types, summary statistics of numeric columns in the dataframe,
+    as well as the value counts for categorical variables.
     '''
     # Print out the "shape" of our dataframe - rows and columns
     print(f'This dataframe has {df.shape[0]} rows and {df.shape[1]} columns.')
@@ -307,14 +325,13 @@ def describe_data(df):
         
         
 #------------------------------------------------------------##------------------------------------------------------------#
-
-
-
+#------------------------------------------------------------##------------------------------------------------------------#
         
 def nulls(df):
     '''
-    This function takes in a pandas dataframe and prints out the shape, datatypes, number of missing values, 
-    columns and their data types, summary statistics of numeric columns in the dataframe, as well as the value counts for categorical variables.
+    This function takes in a pandas dataframe and prints out the shape, datatypes,
+    number of missing values,columns and their data types, summary statistics of numeric 
+    columns in the dataframe, as well as the value counts for categorical variables.
     '''
     # print the number of missing values per column and the total
     print('Null Values by Column: ')
@@ -324,11 +341,12 @@ def nulls(df):
     missing_percentage = round(missing_count / value_count * 100, 2) # percentage of missing values
     missing_df = pd.DataFrame({'count': missing_count, 'percentage': missing_percentage})\
     .sort_values(by='percentage', ascending=False)
-    
+    # show the first fifty
     print(missing_df.head(50))
     print(f' \n Total Number of Missing Values: {missing_total} \n')
     df_total = df.shape[0] * df.shape[1]
     proportion_of_nulls = round((missing_total / df_total), 4)
+    # report the results through f-string print statements
     print(f' Proportion of Nulls in Dataframe: {proportion_of_nulls}\n') 
     print('--------------------------------------')
     print('--------------------------------------')
@@ -337,40 +355,43 @@ def nulls(df):
     print(nulls_by_row(df))
     print('----------------------')
 
-
-
+#------------------------------------------------------------##------------------------------------------------------------#
 #------------------------------------------------------------##------------------------------------------------------------#
 
-
 def wrangle_df(use_cache=True): 
-    
+    """
+    This function implements acquisition and preparation in tandem with one another,
+    performing both in order to achieve a clean, albeit unsplit, dataframe. If the 
+    .csv from prepare was already created, it will read it and return it instantly,
+    otherwise, it will go through both, creating the csv in the process. 
+    """
+    # check the operating system for the prep-yielded csv.
     if os.path.exists('clean.csv') and use_cache:
         print('Using cached CSV')
         return pd.read_csv('clean.csv', index_col='id')
-
+    # press 'F' since it isn't there
     print('clean.csv not detected.')
     print('Acquiring and Preparing Data')
-    
+    # execute both UDF's in sequence.
     df = prep_data(acquire_data())
     
     return df
 
-
-
 #------------------------------------------------------------##------------------------------------------------------------#
-
-
+#------------------------------------------------------------##------------------------------------------------------------#
 
 def train_validate_test_split(df):
     ''' 
-    This function takes in a dataframe and splits it 80:20.  The 20% will be our testing datafrme for our final model.  The 80% will be split a second time (70:30), creating our final training dataframe and a dataframe to validate our model with before testing.  Leaving us we a Train (56%), Validate(24%) and Test (20%) Dataframe from our original data (100%)
+    This function takes in a dataframe and splits it 80:20.  The 20% will be our testing dataframe for our final model.
+    The 80% will be split a second time (70:30), creating our final training dataframe and a dataframe to validate
+    our model with before testing. Leaving us with Train (56%), Validate(24%), and Test (20%) Dataframes.
     '''
-    
+    # initiate the split with train at .8
     train, test = train_test_split(df, 
                                train_size = 0.8,
                                random_state=1313)
     
-    
+    # split between train and validate.
     train, validate = train_test_split(train,
                                   train_size = 0.7,
                                   random_state=1313)
@@ -378,20 +399,15 @@ def train_validate_test_split(df):
     
     return train, validate, test
 
-
-
 #------------------------------------------------------------##------------------------------------------------------------#
-
-
-
-
-# other useful functions for metrics
+#------------------------------------------------------------##------------------------------------------------------------#
 
 def get_metrics(tp, fn, fp, tn):
     '''
-    This function takes the True Positive, False Negative, False Positive, and True Negatives from a confusion matrix and uses them to give us the metrics of the model used for the matrix.
+    This function takes the True Positive, False Negative, False Positive, and True Negatives from a confusion matrix
+    and uses them to give us the metrics of the model used for the matrix.
     '''
-    
+    # define the metrics.
     accuracy = (tp + tn) / (tp + tn + fp + fn)
     recall = tp / (tp + fn)
     precision = tp / (tp + fp)
@@ -422,17 +438,19 @@ def get_metrics(tp, fn, fp, tn):
     print(f'Support (Did Not Survive(0)): {support_pos}')
     print(f'---------------')
     print(f'Support (Survived(1)): {support_neg}')
-    
-    
-    #------------------------------------------------------------##------------------------------------------------------------#
-
-    
-    
+        
+#------------------------------------------------------------##------------------------------------------------------------#
+#------------------------------------------------------------##------------------------------------------------------------#
 
 def print_cv_results(gs, title):
+    """
+    This function provides the cross-validation GridSearchCV function's printed results.
+    In essence, this function shows the best performing models based on functions set below.
+    In that way, this should be considered a helper function. 
+    """
     print('\n -----------------------------------------')
     print(title)
-
+    
     print(f'Best Score = {gs.best_score_:.4f}')
     print(f'Best Hyper-parameters = {gs.best_params_}')
     print()
@@ -451,27 +469,30 @@ def print_cv_results(gs, title):
         print(f'{mean:.4f} (+/-{std:.3f}) for {params}')
     print('\n -----------------------------------------')   
     
-    
-    
-#----------------------------------------------------------------------------------------------------------|
-
-
-#----------------------------------------------------------------------------------------------------------|
-
-
+#------------------------------------------------------------##------------------------------------------------------------#
+#------------------------------------------------------------##------------------------------------------------------------#
 
 def accuracy_models(X_train, y_train):
+    """
+    Sets all of the conditions needed to perform logistic regression across
+    a swathing spectrum of model conditions. Returns the results, and visuals.
+    Tests specifically within the metrics of accuracy.
+    """
     # Logistic Regression
     logReg = LogisticRegression(max_iter=1000)
+    # C is known as a "hyperparameter." The parameters are numbers that tell the model what to do with the characteristics,
+    # whereas the hyperparameters instruct the model on how to choose parameters.
     c_list = [0.001, 0.01, 0.1, 1, 10, 100, 1000]
+    # use the c list iteratively, and implement the unique solvers for each. 
     param_grid = {'C': c_list,
                   'solver': ['newton-cg', 'lbfgs', 'sag', 'saga']}
-    
+    # check the variables set above to perform gs.
     gs = GridSearchCV(estimator=logReg,
                       param_grid=param_grid,
                       scoring='accuracy',
                       cv=3,
                       return_train_score=True)
+    # fit it to train.
     gs = gs.fit(X_train, y_train)
     print_cv_results(gs, 'Logistic Regression Accuracy')
     print('------------------------------------------------')
@@ -487,8 +508,7 @@ def accuracy_models(X_train, y_train):
                       return_train_score=True)
     gs = gs.fit(X_train, y_train)
     print_cv_results(gs, 'KNN Accuracy')
-    
-    
+    # show means for each.  
     test_means = gs.cv_results_['mean_test_score']
     train_means = gs.cv_results_['mean_train_score']
     
@@ -501,9 +521,7 @@ def accuracy_models(X_train, y_train):
     plt.xlabel('Number of Neighbors')
     plt.legend()
     plt.show()
-    print('------------------------------------------------')
-    
-    
+    print('------------------------------------------------')    
     # Decision Tree
     criterion = ['gini', 'entropy']
     colors = ['red', 'blue']
@@ -583,15 +601,15 @@ def accuracy_models(X_train, y_train):
     print('------------------------------------------------')
     print('------------------------------------------------')
     
-    
-#----------------------------------------------------------------------------------------------------------|
-
-
-#----------------------------------------------------------------------------------------------------------|
-
+#------------------------------------------------------------##------------------------------------------------------------#
+#------------------------------------------------------------##------------------------------------------------------------#
 
 def precision_models(X_train, y_train):
-
+    """
+    Sets all of the conditions needed to perform logistic regression across
+    a swathing spectrum of model conditions. Returns the results, and visuals.
+    Tests specifically within the metrics of precision.
+    """
     # Logistic Regression
     logReg = LogisticRegression(max_iter=1000)
     c_list = [ 1, 10, 100, 1000]
@@ -666,14 +684,16 @@ def precision_models(X_train, y_train):
     plt.show()
     print('------------------------------------------------')
     print('------------------------------------------------')
-    
-    
-#----------------------------------------------------------------------------------------------------------|
 
-#----------------------------------------------------------------------------------------------------------|
-
+#------------------------------------------------------------##------------------------------------------------------------#
+#------------------------------------------------------------##------------------------------------------------------------#
 
 def recall_models(X_train, y_train):
+    """
+    Sets all of the conditions needed to perform logistic regression across
+    a swathing spectrum of model conditions. Returns the results, and visuals.
+    Tests specifically within the metrics of accuracy.
+    """
     # Logistic Regression
     logReg = LogisticRegression(max_iter=10000)
     c_list = [0.001, 0.01, 0.1, 1, 10, 100, 1000, 10000]
@@ -791,11 +811,17 @@ def recall_models(X_train, y_train):
     plt.xlabel('Number of Trees')
     plt.legend()
     plt.show()
-#----------------------------------------------------------------------------------------------------------|
 
+#------------------------------------------------------------##------------------------------------------------------------#
+#------------------------------------------------------------##------------------------------------------------------------#
 
-#----------------------------------------------------------------------------------------------------------|
 def predict_on_test(X_train, y_train, X_test, y_test):
+    """
+    Implements the greatest results yielded from previous tests to set predictions on
+    test. Returns the recall, precision, accuracy, F1 score, TP, FP, TN, FN results
+    based on the algorithm's execution. Includes an ROC curve visualization of the
+    results as well. 
+    """
     lr = LogisticRegression(max_iter=10000,
                         C = 100,
                         solver ='newton-cg',
@@ -881,3 +907,7 @@ def predict_on_test(X_train, y_train, X_test, y_test):
     plt.legend(loc="lower right")
     plt.savefig('Logistic Regression ROC Curve.png')
     plt.show()
+    
+#------------------------------------------------------------##------------------------------------------------------------#
+#------------------------------------------------------------##------------------------------------------------------------#
+#------------------------------------------------------------##------------------------------------------------------------#
