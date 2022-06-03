@@ -429,7 +429,7 @@ def get_metrics(tp, fn, fp, tn):
     
     
 
-    def print_cv_results(gs, title):
+def print_cv_results(gs, title):
     print('\n -----------------------------------------')
     print(title)
 
