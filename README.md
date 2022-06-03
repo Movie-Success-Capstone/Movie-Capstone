@@ -61,7 +61,7 @@ All of this can be used to help determine how to better invest in projects going
 | Overview  | The overview description of a movie  | Object  |
 | Popularity  | Scaled numerical measure of perceived movie likability  | Float64  |
 | Runtime  | Recorded movie play-time. (How long the movie is)  | Float64  |
-| Release_date  | Specific calendar date a movie was released. (YYYY-MM-DD)  | Object  |
+| Release_date  | Specific calendar date a movie was released. (YYYY-MM-DD)  | Object**  |
 
     
 #### Engineered Features
@@ -79,7 +79,8 @@ All of this can be used to help determine how to better invest in projects going
 | Month  | Month of the year a movie was released to general public  | int64**  |
 | Runtime.1  | The runtime of a movie. | Float64  |
 
-    
+
+    ** indicates datatype maybe converted to datetime format
 </details>
 <!-- </div>  -->
 <!-- End Data Dictionary here  -->
@@ -172,7 +173,8 @@ The parent module for both data acquisition and preparation are included in the 
    * Release_year
    * Release_date
    * Profitable 
-   * Success_rating [(revenue / budget) * 2] * vote_average 
+   * Success_rating 
+     [(revenue / budget) * 2] * vote_average 
    * Success 
    * Profit_amount [revenue - budget]
     
