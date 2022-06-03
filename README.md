@@ -185,33 +185,33 @@ The parent module for both data acquisition and preparation are included in the 
 <details>
 <summary>Expand</summary>
 
-    Reference to the project main goal of model prediction of movie success between 1915 t0 2017, this exploration phase was key in understanding factors that predict movie success. Guiding our predictions, the following questions were initially analyzed to determine pattern and relations among features of interest:
+Reference to the project main goal of model prediction of movie success between 1915 t0 2017, this exploration phase was key in understanding factors that predict movie success. Guiding our predictions, the following questions were initially analyzed to determine pattern and relations among features of interest:
     
-    - Is there a relationship between budget and revenue?
-    - What are the top 5 Highest Voted Movies?
-    - Examining revenue, what are the top 5 highest revenue movies?
-    - Which top 5 movie genres that are likely to yield the highest profits?
+- Is there a relationship between budget and revenue?
+- What are the top 5 Highest Voted Movies?
+- Examining revenue, what are the top 5 highest revenue movies?
+- Which top 5 movie genres that are likely to yield the highest profits?
     
 #### Key Findings 
     
-    - Budget and revenue shows elevated corelations
-    - Vote count and also has hightened corellations with both revenue and profit amount
-    - Very little correlation between budget and success rating and also between vote average and budget
-    - Most voted movies are:
+- Budget and revenue shows elevated corelations
+- Vote count and also has hightened corellations with both revenue and profit amount
+- Very little correlation between budget and success rating and also between vote average and budget
+- Most voted movies are:
     
-        * Minions
-        * Wonder Woman
-        * Beauty and the Beast
-        * Baby Driver
-        * Big Hero 6
+   * Minions
+   * Wonder Woman
+   * Beauty and the Beast
+   * Baby Driver
+   * Big Hero 6
     
-    - Top 5 most revenue generators movies are:
+- Top 5 most revenue generators movies are:
         
-        * Avator
-        * Star Wars: The Force Awakens
-        * Titanic
-        * The Avengers
-        * Jurassic World
+   * Avator
+   * Star Wars: The Force Awakens
+   * Titanic
+   * The Avengers
+   * Jurassic World
 
 
 </details>
