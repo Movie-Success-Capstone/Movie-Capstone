@@ -1,25 +1,35 @@
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.model_selection import train_test_split
-from sklearn.tree import export_text
-from sklearn.metrics import classification_report
-from sklearn.metrics import confusion_matrix
-from sklearn.metrics import recall_score, precision_score, f1_score, accuracy_score
+#   ▄▄       ▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄   ▄▄▄▄▄▄▄▄▄▄▄  ▄            ▄▄▄▄▄▄▄▄▄▄▄  ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄ 
+#  ▐░░▌     ▐░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░▌          ▐░░░░░░░░░░░▌▐░░▌      ▐░▌▐░░░░░░░░░░░▌
+#  ▐░▌░▌   ▐░▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀█░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░▌           ▀▀▀▀█░█▀▀▀▀ ▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀▀▀ 
+#  ▐░▌▐░▌ ▐░▌▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌               ▐░▌     ▐░▌▐░▌    ▐░▌▐░▌          
+#  ▐░▌ ▐░▐░▌ ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░▌               ▐░▌     ▐░▌ ▐░▌   ▐░▌▐░▌ ▄▄▄▄▄▄▄▄ 
+#  ▐░▌  ▐░▌  ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░▌               ▐░▌     ▐░▌  ▐░▌  ▐░▌▐░▌▐░░░░░░░░▌
+#  ▐░▌   ▀   ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░▌               ▐░▌     ▐░▌   ▐░▌ ▐░▌▐░▌ ▀▀▀▀▀▀█░▌
+#  ▐░▌       ▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌               ▐░▌     ▐░▌    ▐░▌▐░▌▐░▌       ▐░▌
+#  ▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄█░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄  ▄▄▄▄█░█▄▄▄▄ ▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌
+#  ▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░▌ ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌      ▐░░▌▐░░░░░░░░░░░▌
+#   ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀   ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀▀ 
+#
+#----------------------------------------------------------------------------------------------------------|
+#      I M P O R T S
+import pandas as pd
+import numpy as np
+impost matplotlib.pyplot as plt
+from pre_processing_nick import print_cv_results
+
+from sklearn.model_selection import train_test_split, GridSearchCV, StratifiedKFold
+from sklearn.tree import export_text, DecisionTreeClassifier
+from sklearn import metrics
+from sklearn.metrics import classification_report, confusion_matrix, recall_score
+from sklearn.metrics import precision_score, f1_score, accuracy_score, roc_curve, auc
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 from matplotlib.ticker import ScalarFormatter
-from sklearn.model_selection import GridSearchCV
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import StratifiedKFold
-from sklearn.feature_selection import SequentialFeatureSelector
-from pre_processing_nick import print_cv_results
-import matplotlib.pyplot as plt
-from sklearn import metrics
 from sklearn import preprocessing
-from sklearn.metrics import roc_curve, auc
-import numpy as np
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.feature_selection import SequentialFeatureSelector
+#----------------------------------------------------------------------------------------------------------|
 
 def accuracy_models(X_train, y_train):
     # Logistic Regression
@@ -36,7 +46,7 @@ def accuracy_models(X_train, y_train):
     gs = gs.fit(X_train, y_train)
     print_cv_results(gs, 'Logistic Regression Accuracy')
     print('------------------------------------------------')
-    # # KNN
+    # KNN
     knn = KNeighborsClassifier()
     k_list = list(range(1, 26, 2))
     param_grid = [{'n_neighbors': k_list}]
@@ -63,7 +73,7 @@ def accuracy_models(X_train, y_train):
     plt.legend()
     plt.show()
     print('------------------------------------------------')
-    # ############################################################
+    
     # Decision Tree
     criterion = ['gini', 'entropy']
     colors = ['red', 'blue']
@@ -96,8 +106,7 @@ def accuracy_models(X_train, y_train):
     plt.legend()
     plt.show()
     print('------------------------------------------------')
-    # # Random Forest
-    # get results for random forest
+    # Random Forest   
     forest = RandomForestClassifier()
     criterion = ['gini', 'entropy']
     n_list = list(range(1, 11))
@@ -143,7 +152,8 @@ def accuracy_models(X_train, y_train):
     plt.show()
     print('------------------------------------------------')
     print('------------------------------------------------')
-    
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
 def precision_models(X_train, y_train):
 
     # Logistic Regression
@@ -160,7 +170,7 @@ def precision_models(X_train, y_train):
     gs = gs.fit(X_train, y_train)
     print_cv_results(gs, 'Logistic Regression Precision')
     print('------------------------------------------------')
-    # # KNN
+    # KNN
     knn = KNeighborsClassifier()
     k_list = list(range(1, 26, 2))
     param_grid = [{'n_neighbors': k_list}]
@@ -220,9 +230,10 @@ def precision_models(X_train, y_train):
     plt.show()
     print('------------------------------------------------')
     print('------------------------------------------------')
-    
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
 def recall_models(X_train, y_train):
-        # Logistic Regression
+    # Logistic Regression
     logReg = LogisticRegression(max_iter=10000)
     c_list = [0.001, 0.01, 0.1, 1, 10, 100, 1000, 10000]
     param_grid = {'C': c_list,
@@ -235,8 +246,8 @@ def recall_models(X_train, y_train):
                       return_train_score=True)
     gs = gs.fit(X_train, y_train)
     print_cv_results(gs, 'Logistic Regression Recall')
-    
-    # # KNN
+    print('------------------------------------------------')
+    # KNN
     knn = KNeighborsClassifier()
     k_list = list(range(1, 26, 2))
     param_grid = [{'n_neighbors': k_list}]
@@ -262,8 +273,7 @@ def recall_models(X_train, y_train):
     plt.xlabel('Number of Neighbors')
     plt.legend()
     plt.show()
-    
-    # ############################################################
+    print('------------------------------------------------')
     # Decision Tree
     criterion = ['gini', 'entropy']
     colors = ['red', 'blue']
@@ -295,9 +305,8 @@ def recall_models(X_train, y_train):
     plt.xlabel('Max Tree Depth')
     plt.legend()
     plt.show()
-    
-    # # Random Forest
-    # get results for random forest
+    print('------------------------------------------------')
+    # Random Forest
     forest = RandomForestClassifier()
     criterion = ['gini', 'entropy']
     n_list = list(range(1, 11))
@@ -341,7 +350,8 @@ def recall_models(X_train, y_train):
     plt.xlabel('Number of Trees')
     plt.legend()
     plt.show()
-    
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
 def predict_on_test(X_train, y_train, X_test, y_test):
     lr = LogisticRegression(max_iter=10000,
                         C = 100,
@@ -428,3 +438,6 @@ def predict_on_test(X_train, y_train, X_test, y_test):
     plt.legend(loc="lower right")
     plt.savefig('Logistic Regression ROC Curve.png')
     plt.show()
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
