@@ -30,8 +30,9 @@ To view more details on any specific section, please click the 'Expand' drop-dow
     
 ### Classification Model for Predicting Movie Success 
     
-Using the data available from the iMDb API, our team intends to compare different features of movies made between the year 2000 and present day in an attempt to determine the key features that might predict how successful the movie is(Success being measured by iMBd scores/public ratings). 
-Once we explore the data, we will look for any trends that show over the past 2 decades that may have affected what makes a movie successful.  In those 20 years, streaming has risen in popularity, consumer tastes have changed and even how movies are structured has changed(cinematic universes), all of which may have altered what causes a movie's success. Taking these into account, we can build a model that can predict a movie's success rate , thus giving insight into how to outline movies for maximum success in the theaters.   
+After the recent pandemic the movie industry has been slow to return to the volume that it once produced at.  Using open source movie databases, we set out to determine a movie's success based on its financial performance as well as its average viewer ratings.   Keeping an eye for any trends from previous successful movies, we then constructed a Machine Learning(ML) Model to predict the success of other movies.  
+All of this can be used to help determine how to better invest in projects going forwards and what parameters can be set to lead to a healthy return on investments. 
+
     
 </details>
 <!-- </div> -->
@@ -90,13 +91,13 @@ Once we explore the data, we will look for any trends that show over the past 2 
 <!-- <details>
 <summary>Expand</summary> -->
     
-This project aims to achieve the main goal of modeling the prediction of successful movies by applications of scientific, statistical and adaptations of business logic in formation of this final model. A thorough thoughout planning phase involved several main considerations as follows:
+
     
 #### (a). Project Goal
-    Text goes here...    
+    This project aims to achieve the main goal of modeling the prediction of successful movies by applications of scientific, statistical and adaptations of business logic in formation of this final model. A thorough thoughout planning phase involved several main considerations as follows:
     
 #### (b). Project Description
-    Text goes here...    
+    After the recent pandemic the movie industry has been slow to return to the volume that it once produced at. Using open source movie databases, we set out to determine a movie's success based on its financial performance as well as its average viewer ratings. Keeping an eye for any trends from previous successful movies, we then constructed a Machine Learning(ML) Model to predict the success of other movies. All of this can be used to help determine how to better invest in projects going forwards and what parameters can be set to lead to a healthy return on investments. 
     
 #### (c). Methodology
     
@@ -109,10 +110,16 @@ This project aims to achieve the main goal of modeling the prediction of success
 > - What are the top 5 Highest Voted Movies?
 > - What are top 5 Highest profit movies?
 > - Which genre has the highest profit? Or top 5?
-> - How does production company affect profit?
-    
+
 #### (e). Target Variable 
-    Text goes here
+    TARGET VARIABLE == (Revenue / (Budget * 2)) * Vote_Average
+
+Target column == success column
+
+The matrix that we will be using to evaluate our model contains two perspectives. First, we must make sure that the movie is a financial success.  It is not uncommon for most popular movies today to see a 100% return on investment, with revenue reaching twice of what was put into the final product. So we set this as the standard to base our expectations on. 
+Secondly, we must consider a movie’s overall impression on the general public.  Film popularity is the most obvious manifestation of audience taste, and it is based upon the 'willingness-to-pay’. For this purpose we set the average rating (based on a 1-10 scale) as a multiplier for the movies financial success.  Multiplying by the rating will help any films that performed poorly in the theatres, but have gained popularity over time therefore increase the overall value of the film itself. (ex. Cult Classics)
+This formula will help us rank movie’s success from negative to positive, the higher score the more successful a movie is. We decided to use score 6.5 to evaluate a movie’s success. There are about 38% of movies in our dataset that meet this criteria. This will encapsulate all fiscally successful projects, not just the critically acclaimed films at the very top.  Because the truth is that there are thousands off projects at all levels of media, and they all have the potential to generate value for those that make them. We want to capture what can help keep you in that 38% of film population.  
+
    
 #### (f). Stakeholders
 > - Movie producers and interested general public
