@@ -54,11 +54,11 @@ All of this can be used to help determine how to better invest in projects going
 | Genres  | Movie classification type  | Object  |
 | Budget  | Amount in U.S. dollar spend in the production of the movie  | Float64  |
 | Revenue  | The total U.S. dollar amount collected after a movie release  | Float64  |
-| Vote_average  | ..........  | Float64  |
-| Vote_count  | ...........  | Float64  |
+| Vote_average  | The average voting of a movie  | Float64  |
+| Vote_count  | The total vount count of a movie  | Float64  |
 | Production_companies  | Name(s) of production company tasked with creation of movie  | Object  |
 | Production_countries  | Country a movie was marketed/ played   | Object  |
-| Overview  | ...........  | Object  |
+| Overview  | The overview description of a movie  | Object  |
 | Popularity  | Scaled numerical measure of perceived movie likability  | Float64  |
 | Runtime  | Recorded movie play-time. (How long the movie is)  | Float64  |
 | Release_date  | Specific calendar date a movie was released. (YYYY-MM-DD)  | Object  |
@@ -68,16 +68,16 @@ All of this can be used to help determine how to better invest in projects going
     
 | Feature  | Description | Data Type | 
 | :------------- | :------------- | :------------- |
-| Success  | ...........  | Bool  |
+| Success  | TARGET VARIABLE == (Revenue / (Budget * 2)) * Vote_Average  | Bool  |
 | Profit_amount  | U.S. dollar amount calculated from subtracting budget from revenue  | Float64  |
-| Profitable  | ..........  | Bool  |
-| Cast_actor_1  | ............  | Object  |
-| Cast_actor_2  | ............  | Object  |    
-| Cast_actor_3  | ............  | Object  |
-| Total_n_cast  | ..............  | Float64  |
+| Profitable  | Revenue - budget > than 0 means profitable  | Bool  |
+| Cast_actor_1  | cast actor list 1  | Object  |
+| Cast_actor_2  | cast actor list 2  | Object  |    
+| Cast_actor_3  | cast actor list 3  | Object  |
+| Total_n_cast  | cast actor list 4  | Float64  |
 | Release_year  | The year a specific movie was released for general public consumption/ enjoyment  | Int64**  |
 | Month  | Month of the year a movie was released to general public  | int64**  |
-| Runtime.1  | ..........  | Float64  |
+| Runtime.1  | The runtime of a movie. | Float64  |
 
     
 </details>
