@@ -94,14 +94,14 @@ All of this can be used to help determine how to better invest in projects going
 
     
 #### (a). Project Goal
-    This project aims to achieve the main goal of modeling the prediction of successful movies by applications of scientific, statistical and adaptations of business logic in formation of this final model. A thorough thoughout planning phase involved several main considerations as follows:
+   This project aims to achieve the main goal of modeling the prediction of successful movies by applications of scientific, statistical and adaptations of business logic in formation of this final model. A thorough thoughout planning phase involved several main considerations as follows:
     
 #### (b). Project Description
-    After the recent pandemic the movie industry has been slow to return to the volume that it once produced at. Using open source movie databases, we set out to determine a movie's success based on its financial performance as well as its average viewer ratings. Keeping an eye for any trends from previous successful movies, we then constructed a Machine Learning(ML) Model to predict the success of other movies. All of this can be used to help determine how to better invest in projects going forwards and what parameters can be set to lead to a healthy return on investments. 
+   After the recent pandemic the movie industry has been slow to return to the volume that it once produced at. Using open source movie databases, we set out to determine a movie's success based on its financial performance as well as its average viewer ratings. Keeping an eye for any trends from previous successful movies, we then constructed a Machine Learning(ML) Model to predict the success of other movies. All of this can be used to help determine how to better invest in projects going forwards and what parameters can be set to lead to a healthy return on investments. 
     
 #### (c). Methodology
     
-    Plan >> Acquire >> Prepare >> Explore >> Model >> Deliver
+   Plan >> Acquire >> Prepare >> Explore >> Model >> Deliver
     
 #### (d). Exploration Questions of interest
     
@@ -112,11 +112,15 @@ All of this can be used to help determine how to better invest in projects going
 > - Which genre has the highest profit? Or top 5?
 
 #### (e). Target Variable 
-    TARGET VARIABLE == (Revenue / (Budget * 2)) * Vote_Average
-    Target column == success column
-    The matrix that we will be using to evaluate our model contains two perspectives. First, we must make sure that the movie is a financial success.  It is not uncommon for most popular movies today to see a 100% return on investment, with revenue reaching twice of what was put into the final product. So we set this as the standard to base our expectations on. 
-    Secondly, we must consider a movie’s overall impression on the general public.  Film popularity is the most obvious manifestation of audience taste, and it is based upon the 'willingness-to-pay’. For this purpose we set the average rating (based on a 1-10 scale) as a multiplier for the movies financial success.  Multiplying by the rating will help any films that performed poorly in the theatres, but have gained popularity over time therefore increase the overall value of the film itself. (ex. Cult Classics)
-    This formula will help us rank movie’s success from negative to positive, the higher score the more successful a movie is. We decided to use score 6.5 to evaluate a movie’s success. There are about 38% of movies in our dataset that meet this criteria. This will encapsulate all fiscally successful projects, not just the critically acclaimed films at the very top.  Because the truth is that there are thousands off projects at all levels of media, and they all have the potential to generate value for those that make them. We want to capture what can help keep you in that 38% of film population.  
+       TARGET VARIABLE == (Revenue / (Budget * 2)) * Vote_Average
+       
+       Target column == success column
+
+The matrix that we will be using to evaluate our model contains two perspectives. First, we must make sure that the movie is a financial success.  It is not uncommon for most popular movies today to see a 100% return on investment, with revenue reaching twice of what was put into the final product. So we set this as the standard to base our expectations on. 
+
+Secondly, we must consider a movie’s overall impression on the general public.  Film popularity is the most obvious manifestation of audience taste, and it is based upon the 'willingness-to-pay’. For this purpose we set the average rating (based on a 1-10 scale) as a multiplier for the movies financial success.  Multiplying by the rating will help any films that performed poorly in the theatres, but have gained popularity over time therefore increase the overall value of the film itself. (ex. Cult Classics)
+
+This formula will help us rank movie’s success from negative to positive, the higher score the more successful a movie is. We decided to use score 6.5 to evaluate a movie’s success. There are about 38% of movies in our dataset that meet this criteria. This will encapsulate all fiscally successful projects, not just the critically acclaimed films at the very top.  Because the truth is that there are thousands off projects at all levels of media, and they all have the potential to generate value for those that make them. We want to capture what can help keep you in that 38% of film population.  
 
    
 #### (f). Stakeholders
