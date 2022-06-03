@@ -250,14 +250,14 @@ The following sections will tabulate the models results over the train and valid
     Conclusion goes here...
 </details>
 <!-- </div> -->
-<!-- Best model is logistic regession based on precision metrics. Our formulated model beats the baseline of 62.09% by 15.27 percentile points. In summary, our team was successful in building a success-predicting ML Model with which  valuable insights could be derived. Our best model (Logistic Regression) predicted movie success with 77.36% precision, and 15% increase from the baseline performance.
+<!--   -->
+Best model is logistic regession based on precision metrics. Our formulated model beats the baseline of 62.09% by 15.27 percentile points. In summary, our team was successful in building a success-predicting ML Model with which  valuable insights could be derived. Our best model (Logistic Regression) predicted movie success with 77.36% precision, and 15% increase from the baseline performance.
 We recommend to our stakeholders the following measurements, guidelines that can improve the chances of a filmmakers project overall success. 
 Ideal Runtime —  180 - 230 minutes       
 Ideal Total Cast Size —  130 - 180 people
 Consistently Successful Genres — Action, Adventure, Comedy
 Least Profitable/Successful — Documentary, Mystery
-Future project versions intend to understand drivers for the low success in these least performing categories and offer guidance on measures to improve.  We also discerned the most common actors for successful movies, which with time could give details on what personalities draw in more revenue.  -->
-
+Future project versions intend to understand drivers for the low success in these least performing categories and offer guidance on measures to improve.  We also discerned the most common actors for successful movies, which with time could give details on what personalities draw in more revenue.
 <hr>
 
 <!-- <div id = 'steps'> -->
