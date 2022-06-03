@@ -172,11 +172,12 @@ The parent module for both data acquisition and preparation are included in the 
     
    * Release_year
    * Release_date
-   * Profitable 
-   * Success_rating 
-     [(revenue / budget) * 2] * vote_average 
+   * Profitable   
    * Success 
    * Profit_amount [revenue - budget]
+   * Success_rating 
+            
+    [(revenue / budget) * 2] * vote_average 
     
 - Sets dataframe index as __id__
 - Saved a __clean.csv__ file for explorations. 
