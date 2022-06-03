@@ -247,7 +247,7 @@ The following sections will tabulate the models results over the train and valid
 ## Conclusion and Recommendations 
 <details>
 <summary>Expand</summary>
-    Conclusion goes here...
+    
 </details>
 <!-- </div> -->
 <!--   -->
