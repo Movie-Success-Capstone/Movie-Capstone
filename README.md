@@ -28,11 +28,12 @@ To view more details on any specific section, please click the 'Expand' drop-dow
 <details>
 <summary>Expand</summary>  
     
-### Classification Model for Predicting Movie Success 
+### Cinematic Success: A Matter of Classification
     
-Using the data available from the iMDb API, our team intends to compare different features of movies made between the year 2000 and present day in an attempt to determine the key features that might predict how successful the movie is(Success being measured by iMBd scores/public ratings). 
-Once we explore the data, we will look for any trends that show over the past 2 decades that may have affected what makes a movie successful.  In those 20 years, streaming has risen in popularity, consumer tastes have changed and even how movies are structured has changed(cinematic universes), all of which may have altered what causes a movie's success. Taking these into account, we can build a model that can predict a movie's success rate , thus giving insight into how to outline movies for maximum success in the theaters.   
-    
+Cinema is a captivating art form. The traditions, techniques, and practices which envelop this visual medium vary across countless cultures. Some films garner international acclaim; while others are widely discredited as failures. So this begs the question: are there seemingly __universal__ features which help to determine any given film's potential for financial or critical success--whether in terms of income amount generated via film sales (i.e., revenue), consumer feedback, or some other aspect?|         
+Surely, springs of ideas would come to mind for anyone pondering this subject, assuming they keep their eyes peeled: that's attentive viewership in a nutshell. So stick around, audience, until we roll credits. As the exit music plays, we will give you some insights toward predicting how a movie might move money into its makers' pockets and joy into its viewers' hearts.         
+[END SCENE]
+CUT TO: 
 </details>
 <!-- </div> -->
 <!-- End Introduction here  -->
