@@ -30,7 +30,8 @@ To view more details on any specific section, please click the 'Expand' drop-dow
     
 ### Cinematic Success: A Matter of Classification
     
-Cinema is a captivating art form. The traditions, techniques, and practices which envelop this visual medium vary across countless cultures. Some films garner international acclaim; while others are widely discredited as failures. So this begs the question: are there seemingly __universal__ features which help to determine any given film's potential for financial or critical success--whether in terms of income amount generated via film sales (i.e., revenue), consumer feedback, or some other aspect?
+Cinema is a captivating art form. The traditions, techniques, and practices which envelop this visual medium vary across countless cultures. Some films garner international acclaim; while others are widely discredited as failures. So this begs the question: are there seemingly __universal__ features which help to determine any given film's potential for financial or critical success--whether in terms of income amount generated via film sales (i.e., revenue), consumer feedback, or some other aspect?         
+    
     Surely, springs of ideas would come to mind for anyone pondering this subject, assuming they keep their eyes peeled: that's attentive viewership in a nutshell. So stick around, audience, until we roll credits. As the exit music plays, we will give you some insights toward predicting how a movie might move money into its makers' pockets and joy into its viewers' hearts.  
     [END SCENE]
                               CUT TO: 
