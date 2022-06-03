@@ -16,6 +16,10 @@ from sklearn.model_selection import StratifiedKFold
 from sklearn.feature_selection import SequentialFeatureSelector
 from pre_processing_nick import print_cv_results
 import matplotlib.pyplot as plt
+from sklearn import metrics
+from sklearn import preprocessing
+from sklearn.metrics import roc_curve, auc
+import numpy as np
 
 def accuracy_models(X_train, y_train):
     # Logistic Regression
@@ -338,3 +342,89 @@ def recall_models(X_train, y_train):
     plt.legend()
     plt.show()
     
+def predict_on_test(X_train, y_train, X_test, y_test):
+    lr = LogisticRegression(max_iter=10000,
+                        C = 100,
+                        solver ='newton-cg',
+                        multi_class='auto')
+
+    # prediction_accuracies.
+    prediction_accuracies = []
+    confusion_matrices = []
+    
+    # predictions.
+    model_predictions = [] 
+    target_predictions = []
+    
+    # Train the model using training sets.
+    lr.fit(X_train, y_train)
+    y_pred = lr.predict(X_test)
+    accuracy = metrics.accuracy_score(y_test, y_pred)
+    prediction_accuracies.append(accuracy)
+    # Metrics.
+    confusion_matrices.append(metrics.confusion_matrix(y_test, y_pred))
+    
+    # Predictions and Targets.
+    target_predictions.append(y_test)
+    model_predictions.append(y_pred)
+    
+    totals = np.array([[0, 0],[0, 0]])
+    
+    for matrix in confusion_matrices:
+    
+        for i in range(0, 2):
+            for j in range(0, 2):
+                totals[i][j] += matrix[i][j]
+    
+    tn, fp, fn, tp = totals.ravel()
+    
+    cm = np.array([['tn: '+str(tn), 'fp: '+str(fp)],['fn: '+str(fn), 'tp: '+str(tp)]])
+    
+    print("------------------")
+    total_records = tn+fp+fn+tp
+    print("Number of records: ", total_records)
+    print("------------------")
+    print("Confusion Matrix:")
+    print(cm)
+    print("------------------")
+    avg = sum(prediction_accuracies)/len(prediction_accuracies)
+    print("Accuracy: %.9f %%" %(avg*100))
+    print("------------------")
+    tpr = (tp/(tp+fn))*100
+    tnr = (tn/(tn+fp))*100
+    fpr = (fp/(tn+fp))*100
+    fnr = (fn/(tp+fn))*100
+    print("TPR: %.4f %%" %(tpr))
+    print("TNR: %.4f %%" %(tnr))
+    print("FPR: %.4f %%" %(fpr))
+    print("FNR: %.4f %%" %(fnr))
+    print("------------------")
+    precision = (tp/(tp+fp))
+    recall = (tp/(tp+fn))
+    print("Precision: %.4f" %(precision))
+    print("Recall: %.4f" %(recall))
+    print("------------------")
+    f1measure = 2*((precision*recall)/(precision+recall))
+    print("F1-Measure: %.4f" %(f1measure))
+    
+    
+    # Predictions
+    target_predictions = np.concatenate((target_predictions), axis=None)
+    model_predictions = np.concatenate((model_predictions), axis=None)
+    
+    
+    fpr, tpr, thresholds = roc_curve(model_predictions, target_predictions)
+    roc_auc = auc(fpr, tpr)
+    
+    plt.figure()
+    lw=2
+    plt.plot(fpr, tpr, color='darkorange', lw=1, label='ROC curve (area = %0.2f)' % roc_auc)
+    plt.plot([0, 1], [0, 1], color='navy', lw=lw, linestyle='--')
+    plt.xlim([0.0, 1.0])
+    plt.ylim([0.0, 1.05])
+    plt.xlabel('False Positive Rate')
+    plt.ylabel('True Positive Rate')
+    plt.title('Receiver Operating Characteristic')
+    plt.legend(loc="lower right")
+    plt.savefig('Logistic Regression ROC Curve.png')
+    plt.show()
