@@ -113,12 +113,10 @@ All of this can be used to help determine how to better invest in projects going
 
 #### (e). Target Variable 
     TARGET VARIABLE == (Revenue / (Budget * 2)) * Vote_Average
-
-Target column == success column
-
-The matrix that we will be using to evaluate our model contains two perspectives. First, we must make sure that the movie is a financial success.  It is not uncommon for most popular movies today to see a 100% return on investment, with revenue reaching twice of what was put into the final product. So we set this as the standard to base our expectations on. 
-Secondly, we must consider a movie’s overall impression on the general public.  Film popularity is the most obvious manifestation of audience taste, and it is based upon the 'willingness-to-pay’. For this purpose we set the average rating (based on a 1-10 scale) as a multiplier for the movies financial success.  Multiplying by the rating will help any films that performed poorly in the theatres, but have gained popularity over time therefore increase the overall value of the film itself. (ex. Cult Classics)
-This formula will help us rank movie’s success from negative to positive, the higher score the more successful a movie is. We decided to use score 6.5 to evaluate a movie’s success. There are about 38% of movies in our dataset that meet this criteria. This will encapsulate all fiscally successful projects, not just the critically acclaimed films at the very top.  Because the truth is that there are thousands off projects at all levels of media, and they all have the potential to generate value for those that make them. We want to capture what can help keep you in that 38% of film population.  
+    Target column == success column
+    The matrix that we will be using to evaluate our model contains two perspectives. First, we must make sure that the movie is a financial success.  It is not uncommon for most popular movies today to see a 100% return on investment, with revenue reaching twice of what was put into the final product. So we set this as the standard to base our expectations on. 
+    Secondly, we must consider a movie’s overall impression on the general public.  Film popularity is the most obvious manifestation of audience taste, and it is based upon the 'willingness-to-pay’. For this purpose we set the average rating (based on a 1-10 scale) as a multiplier for the movies financial success.  Multiplying by the rating will help any films that performed poorly in the theatres, but have gained popularity over time therefore increase the overall value of the film itself. (ex. Cult Classics)
+    This formula will help us rank movie’s success from negative to positive, the higher score the more successful a movie is. We decided to use score 6.5 to evaluate a movie’s success. There are about 38% of movies in our dataset that meet this criteria. This will encapsulate all fiscally successful projects, not just the critically acclaimed films at the very top.  Because the truth is that there are thousands off projects at all levels of media, and they all have the potential to generate value for those that make them. We want to capture what can help keep you in that 38% of film population.  
 
    
 #### (f). Stakeholders
@@ -255,9 +253,12 @@ Reference to the project main goal of model prediction of movie success between 
 <details>
 <summary>Expand</summary>
   <ol>
-      <li>Step 1</li>
-      <li>Step 2</li>
-      <li>Step 3</li>
+      <li>Step 1.  Clone this repository into your local machine using the following command:
+git clone git@github.com:Movie-Success-Capstone/Movie-Capstone.git</li>
+      <li>Step 2.You will need Pandas, Numpy, Matplotlib, Seaborn, and SKLearn installed on your machine. </li>
+      <li>Step 3. Please run python acquire.py in a terminal to acquire the csv file.</li>
+      <li>Step 4. Now you can start a Jupyter Notebook session and execute the code blocks in the final_report.ipynb notebook.
+</li>
   </ol>
 </details>
 <!-- </div> -->
