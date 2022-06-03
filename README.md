@@ -286,7 +286,7 @@ git clone git@github.com:Movie-Success-Capstone/Movie-Capstone.git</li>
 ## Appendix 
 <!-- <details> -->
 <summary>Links</summary>
-    <a href = 'https://github.com/Movie-Success-Capstone/Movie-Capstone'>Github</a>
+    <a href = 'https://github.com/Movie-Success-Capstone/Movie-Capstone/blob/main/Final/final_report.ipynb'>Github</a>
     <br>
     <a href = 'https://docs.google.com/presentation/d/1lR8gEP5J3bgiIJIYR62FGynSkfUNc2IknZ_xttPQBvM/edit#slide=id.g1310cb36da7_0_64'>Google Slides</a>
     <br>
