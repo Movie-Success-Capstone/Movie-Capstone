@@ -150,28 +150,29 @@ In the prepare phase in this README.md file, we will describe the joining proced
 The parent module for both data acquisition and preparation are included in the final)acquire module. Within the same module file, specific tasts are divided by individualized function to better enhance readability. __Wrangle_df__ function is the resultant that collectively hosts calls to the main __prep_data__ function function for the our data preparation. This function uses local data caching method to enhance data loading speeds. 
 
 #### Prep_data function
-    - Drops unnecessary columns 
-    - Drops individual row nulls and any duplicated values 
-    - Applies median budget values for budget between 0 to 1,000,000
-    - Appends names(with whitespace) on genres columns
-    - Returns profitable as type bool for explorations
-    - Extracts nested dictionary data from columns production_company and cast
-    - One hot ecode data for modeling
-    - Feature engineer columns:
+
+- Drops unnecessary columns 
+- Drops individual row nulls and any duplicated values 
+- Applies median budget values for budget between 0 to 1,000,000
+- Appends names(with whitespace) on genres columns
+- Returns profitable as type bool for explorations
+- Extracts nested dictionary data from columns production_company and cast
+- One hot ecode data for modeling
+- Feature engineer columns:
     
-        * Release_year
-        * Release_date
-        * Profitable 
-        * Success_rating [(revenue / budget) * 2] * vote_average 
-        * Success 
-        * Profit_amount [revenue - budget]
+   * Release_year
+   * Release_date
+   * Profitable 
+   * Success_rating [(revenue / budget) * 2] * vote_average 
+   * Success 
+   * Profit_amount [revenue - budget]
     
-    - Sets dataframe index as __id__
-    - Saved a __clean.csv__ file for explorations. 
-    - Explain variables as defined in the project through graphical data dictionary representation
+- Sets dataframe index as __id__
+- Saved a __clean.csv__ file for explorations. 
+- Explain variables as defined in the project through graphical data dictionary representation
    
 #### Train_validate_test_split function
-    - Splits the dataset into train, validate, and test sets for exploration and modeling.
+- Splits the dataset into train, validate, and test sets for exploration and modeling.
     
     
 </details>
