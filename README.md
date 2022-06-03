@@ -147,8 +147,27 @@ In the prepare phase in this README.md file, we will describe the joining proced
 <details>
 <summary>Expand</summary>
     
-Data wrangling (preparation) for the iMDb involved several steps 
+The parent module for both data acquisition and preparation are included in the final)acquire module. Within the same module file, specific tasts are divided by individualized function to better enhance readability. __Wrangle_df__ function is the resultant that collectively hosts calls to the main __prep_data__ function function for the our data preparation. This function uses local data caching method to enhance data loading speeds. 
 
+#### Prep_data function
+    - Drops unnecessary columns 
+    - Drops individual row nulls and any duplicated values 
+    - Applies median budget values for budget between 0 to 1,000,000
+    - Appends names(with whitespace) on genres columns
+    - Returns profitable as type bool for explorations
+    - Extracts nested dictionary data from columns production_company and cast
+    - Feature engineer columns:
+    
+        * Release_year
+        * Release_date
+        * Profitable 
+        * Success_rating [(revenue/ budget) * 2] * vote_average 
+        * Success 
+        * Profit_amount [revenue - budget]
+    
+    - Sets dataframe index as __id__
+    - Saved a __clean.csv__ file for explorations. 
+    
 </details>
 <!-- </div> -->
 <!-- End Prepare here  -->
@@ -160,6 +179,8 @@ Data wrangling (preparation) for the iMDb involved several steps
 <details>
 <summary>Expand</summary>
     Explore goes here...
+    
+    
 </details>
 <!-- </div> -->
 <!-- End Explore here  -->
