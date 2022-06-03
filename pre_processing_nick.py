@@ -5,6 +5,21 @@ import scipy as sc
 import seaborn as sns
 import matplotlib.pyplot as plt
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.model_selection import train_test_split
+from sklearn.tree import export_text
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+from sklearn.metrics import recall_score, precision_score, f1_score, accuracy_score
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.neighbors import KNeighborsClassifier
+from sklearn.linear_model import LogisticRegression
+from matplotlib.ticker import ScalarFormatter
+from sklearn.model_selection import GridSearchCV
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import StratifiedKFold
 
 
 def create_modeling_df():
@@ -64,7 +79,30 @@ def split_and_scale(modeling_df):
     
     return X_train, X_validate, X_test, y_train, y_validate, y_test
     
+# print grid search results
+def print_cv_results(gs, title):
+    print('\n -----------------------------------------')
+    print(title)
+
+    print(f'Best Score = {gs.best_score_:.4f}')
+    print(f'Best Hyper-parameters = {gs.best_params_}')
+    print()
+
+    print('Test Scores:')
+    test_means = gs.cv_results_['mean_test_score']
+    test_stds = gs.cv_results_['std_test_score']
+    for mean, std, params in zip(test_means, test_stds, gs.cv_results_['params']):
+        print(f'{mean:.4f} (+/-{std:.3f}) for {params}')
+    print()
+
+    print('Training Scores:')
+    train_means = gs.cv_results_['mean_train_score']
+    train_stds = gs.cv_results_['std_train_score']
+    for mean, std, params in zip(train_means, train_stds, gs.cv_results_['params']):
+        print(f'{mean:.4f} (+/-{std:.3f}) for {params}')
+    print('\n -----------------------------------------')    
     
+
         
     
     
