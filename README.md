@@ -285,6 +285,7 @@ git clone git@github.com:Movie-Success-Capstone/Movie-Capstone.git</li>
     <a href = 'https://github.com/Movie-Success-Capstone/Movie-Capstone'>Github</a>
     <br>
     <a href = 'https://docs.google.com/presentation/d/1lR8gEP5J3bgiIJIYR62FGynSkfUNc2IknZ_xttPQBvM/edit#slide=id.g1310cb36da7_0_64'>Google Slides</a>
+    <br>
      <a href = 'https://www.canva.com/design/DAFCeimVECI/h4M50njErHgR5OBCSX1bZg/edit?utm_content=DAFCeimVECI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'>Project Brochure</a>
 </details>
 <!-- </div> -->
