@@ -226,7 +226,7 @@ def prep_data(df, use_cache=True):
 #------------------------------------------------------------##------------------------------------------------------------#
 #------------------------------------------------------------##------------------------------------------------------------#
        
-def nulls_by_col(df):
+def nulls_by_row(df):
     '''
     This function  takes in a dataframe of observations and attributes(or columns) and returns a dataframe where
     each row is an atttribute name, the first column is the number of rows with missing values for that attribute,
@@ -246,7 +246,7 @@ def nulls_by_col(df):
 #------------------------------------------------------------##------------------------------------------------------------#
 #------------------------------------------------------------##------------------------------------------------------------#
 
-def nulls_by_row(df):
+def nulls_by_col(df):
     '''
     This function takes in a dataframe and returns a dataframe with 3 columns: the number of columns missing,
     percent of columns missing, and number of rows with n columns missing.
