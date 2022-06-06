@@ -200,7 +200,6 @@ def prep_data(df, use_cache=True):
              'profitable', 'release_date', 'release_year', 'imdb_id']]
     # extract first for production company
     df['production_company'] = df['production_companies'].str.split().str.get(0)
-    
     # One Hot Encode for Genres
     df['is_genre_adventure'] = df.genres.apply(lambda genre_list: 'Adventure' in genre_list) * 1
     df['is_genre_horror'] = df.genres.apply(lambda genre_list: 'Horror' in genre_list) * 1
@@ -232,7 +231,7 @@ def prep_data(df, use_cache=True):
 #------------------------------------------------------------##------------------------------------------------------------#
 #------------------------------------------------------------##------------------------------------------------------------#
        
-def nulls_by_col(df):
+def nulls_by_row(df):
     '''
     This function  takes in a dataframe of observations and attributes(or columns) and returns a dataframe where
     each row is an atttribute name, the first column is the number of rows with missing values for that attribute,
@@ -252,7 +251,7 @@ def nulls_by_col(df):
 #------------------------------------------------------------##------------------------------------------------------------#
 #------------------------------------------------------------##------------------------------------------------------------#
 
-def nulls_by_row(df):
+def nulls_by_col(df):
     '''
     This function takes in a dataframe and returns a dataframe with 3 columns: the number of columns missing,
     percent of columns missing, and number of rows with n columns missing.
