@@ -33,3 +33,7 @@ pd.set_option('display.max_rows', None)
 # Set default graph size
 plt.rc('figure', figsize=(13.0, 6.0))
 sns.set(rc = {'figure.figsize':(13,6.0)})
+
+# Set dataframe display options
+pd.options.display.max_colwidth = 25
+pd.options.display.max_seq_items = 25
