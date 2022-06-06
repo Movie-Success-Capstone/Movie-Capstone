@@ -215,6 +215,12 @@ def prep_data(df, use_cache=True):
     df['is_genre_mystery'] = df.genres.apply(lambda genre_list: 'Mystery' in genre_list) * 1
     df['is_genre_fantasy'] = df.genres.apply(lambda genre_list: 'Fantasy' in genre_list) * 1
     df['is_genre_documentary'] = df.genres.apply(lambda genre_list: 'Documentary' in genre_list) * 1
+    
+    # somewhere along the way, nulls were introduced
+    # here are three different ways to handle them here.
+    df = df[~df['genres'].isnull()]
+    df = df[df['production_countries'].notnull()]
+    df = df[~df['production_company'].isna()]
     # set the index based on the unique values of film id
     df = df.set_index('id').sort_index()
     # create a csv to greatly speed up future analysis. 
