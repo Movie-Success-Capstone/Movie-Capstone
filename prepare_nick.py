@@ -93,6 +93,21 @@ def prep_data(df, use_cache=True):
     df['is_genre_fantasy'] = df.genres.apply(lambda genre_list: 'Fantasy' in genre_list) * 1
     df['is_genre_documentary'] = df.genres.apply(lambda genre_list: 'Documentary' in genre_list) * 1
     
+    df['release_year'] = df.release_date.dt.year
+    df['release_month'] = df.release_date.dt.month
+    df['release_day'] = df.release_date.dt.day
+    df['release_weekday'] = df.release_date.dt.day_name()
+    df['is_long_movie'] = df.runtime.transform(lambda x: int(x > 120))
+    df['ROI'] = df.revenue / df.budget
+    df['returns'] = pd.qcut(df.ROI, 4, labels=['low', 'avg', 'high', 'very high'])
+    df['budget_range'] = pd.qcut(df.budget, 5, labels=['low', 'avg', 'high', 'very high'], duplicates='drop')
+    
+    # somewhere along the way, nulls were introduced
+    # here are three different ways to handle them here.
+    df = df[~df['genres'].isnull()]
+    df = df[df['production_countries'].notnull()]
+    df = df[~df['production_company'].isna()]
+    
     df = df.set_index('id').sort_index()
     
     df.to_csv('clean.csv')
