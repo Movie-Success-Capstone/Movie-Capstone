@@ -289,9 +289,9 @@ git clone git@github.com:Movie-Success-Capstone/Movie-Capstone.git</li>
 <summary>Links</summary>
     <a href = 'https://github.com/Movie-Success-Capstone/Movie-Capstone/blob/main/Final/final_report.ipynb'>Github</a>
     <br>
-    <a href = 'https://www.canva.com/design/DAFC11J4Ygw/c4zUuaY4IVLyh8VSIOm7gw/edit?utm_source=shareButton&utm_medium=email&utm_campaign=designshare'>Presentation Slides</a>
+    <a href = 'https://www.canva.com/design/DAFCeimVECI/h4M50njErHgR5OBCSX1bZg/edit?utm_content=DAFCeimVECI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'>Project Brochure</a>
     <br>
-     <a href = 'https://www.canva.com/design/DAFCeimVECI/h4M50njErHgR5OBCSX1bZg/edit?utm_content=DAFCeimVECI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton'>Project Brochure</a>
+    <a href = 'https://www.canva.com/design/DAFC11J4Ygw/c4zUuaY4IVLyh8VSIOm7gw/edit?utm_source=shareButton&utm_medium=email&utm_campaign=designshare'>Presentation Slides</a>
 <!-- </details> -->
 <!-- </div> -->
 <!-- End Appendix here  -->
