@@ -23,7 +23,7 @@
 #                                                                                               
 #----------------------------------------------------------------------------------------------------------|
 # import wrangle as w 
-from final_acquire import*
+from wrangle import*
 import pandas as pd
 import numpy as np
 import scipy as sc
