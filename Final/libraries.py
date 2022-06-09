@@ -20,7 +20,10 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.linear_model import LogisticRegression
 
 # Custom
-import final_acquire as fa
+from final_acquire import*
+from modeling import*
+from pre_processing import*
+
 
 # Ignore warnings
 import warnings
