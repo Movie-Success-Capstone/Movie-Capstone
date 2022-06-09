@@ -28,7 +28,7 @@ import numpy as np
 import scipy as sc
 import seaborn as sns
 import matplotlib.pyplot as plt
-from modeling import *
+import nick_mod as mod
 from sklearn.model_selection import GridSearchCV
 #----------------------------------------------------------------------------------------------------------|
 def create_modeling_df():
