@@ -15,6 +15,9 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from wrangle import *
+import scipy as sc
+import seaborn as sns
 
 from sklearn.model_selection import train_test_split, GridSearchCV, StratifiedKFold
 from sklearn.tree import export_text, DecisionTreeClassifier
@@ -29,6 +32,83 @@ from sklearn import preprocessing
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.feature_selection import SequentialFeatureSelector
 #----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
+def create_modeling_df(use_cache=True):
+    # If the cached parameter is True, read the csv file on disk in the same folder as this file 
+    if os.path.exists('modeling.csv') and use_cache:
+        print('modeling.csv detected. \n Dataframe available.')
+        return pd.read_csv('modeling.csv')
+
+    # When there's no cached csv, read the following query from Codeup's SQL database.
+    print('clean.csv not detected.')
+    print('processing capstone.csv')
+    
+    df = w.wrangle_df()
+    # obtain ten most frequently occuring companies
+    threshold1 = 101
+    df.loc[df['production_company'].value_counts()\
+           [df['production_company']].values < threshold1, 'production_company'] = "other_company"
+    # obtain ten actors who appear the most 
+    threshold2 = 26
+    df.loc[df['cast_actor_1'].value_counts()\
+           [df['cast_actor_1']].values < threshold2, 'cast_actor_1'] = "other_actor"
+    # create dummies based on those newly created columns
+    dummy_group = ['cast_actor_1', 'production_company',
+                  'returns', 'budget_range', 'release_weekday']
+    dummy_df = pd.get_dummies(df.loc[:,dummy_group], drop_first=True)
+    # subset the data frame. Will retain even less columns after feature selection
+    keep =  ['budget','runtime', 'vote_average','vote_count', 'success', 
+         'release_year', 'is_genre_adventure', 'is_genre_horror', 
+         'is_genre_drama', 'is_genre_scifi', 'is_genre_romance',
+         'is_genre_thriller', 'is_genre_crime', 'is_genre_comedy',
+         'is_genre_animation', 'is_genre_action', 'is_genre_mystery',
+         'is_genre_fantasy', 'is_genre_documentary', 'total_n_cast',
+             'is_long_movie', 'ROI']
+    modeling_df = df.loc[:,keep]
+    modeling_df = pd.concat([modeling_df, dummy_df], axis=1)
+    print(f'the current shape is {modeling_df.shape}')
+    print('please split and then scale this dataframe')
+    
+    modeling_df['baseline'] = 0
+    modeling_df['baseline_accuracy'] = (modeling_df['baseline'] == modeling_df['success']).mean()
+
+    modeling_df.to_csv('modeling.csv')
+    print('modeling.csv ready for future use')
+    return modeling_df
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
+def split_and_scale(modeling_df):
+    train, validate, test = train_validate_test_split(modeling_df)
+    X_train = train.drop(columns=['success'])
+    y_train = train['success']
+    
+    X_validate = validate.drop(columns=['success'])
+    y_validate = validate['success']
+    
+    X_test = test.drop(columns=['success'])
+    y_test = test['success']
+    
+    scaler = MinMaxScaler()
+    # Note that we only call .fit with the training data,
+    # but we use .transform to apply the scaling to all the data splits.
+    scaler.fit(X_train)
+    
+    X_train_scaled = scaler.transform(X_train)
+    X_validate_scaled = scaler.transform(X_validate)
+    X_test_scaled = scaler.transform(X_test)
+    
+    X_train = pd.DataFrame(X_train_scaled, index=X_train.index, columns = X_train.columns)
+    X_validate = pd.DataFrame(X_validate_scaled, index=X_validate.index, columns = X_validate.columns)
+    X_test = pd.DataFrame(X_test_scaled, index=X_test.index, columns = X_test.columns)
+    
+    X_train['baseline_prediction'] = 0
+    X_validate['baseline_prediction'] = 0
+    X_test['baseline_prediction'] = 0
+    
+    return X_train, X_validate, X_test, y_train, y_validate, y_test
+#----------------------------------------------------------------------------------------------------------|
+#----------------------------------------------------------------------------------------------------------|
+
 def print_cv_results(gs, title):
     print('\n -----------------------------------------')
     print(title)
