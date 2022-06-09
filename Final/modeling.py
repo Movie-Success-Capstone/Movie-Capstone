@@ -18,6 +18,7 @@ import matplotlib.pyplot as plt
 from wrangle import *
 import scipy as sc
 import seaborn as sns
+import wrangle as w
 
 from sklearn.model_selection import train_test_split, GridSearchCV, StratifiedKFold
 from sklearn.tree import export_text, DecisionTreeClassifier
@@ -40,8 +41,8 @@ def create_modeling_df(use_cache=True):
         return pd.read_csv('modeling.csv')
 
     # When there's no cached csv, read the following query from Codeup's SQL database.
-    print('clean.csv not detected.')
-    print('processing capstone.csv')
+    print('modeling.csv not detected.')
+    print('initiating acquisiton and preparation')
     
     df = w.wrangle_df()
     # obtain ten most frequently occuring companies
@@ -100,10 +101,6 @@ def split_and_scale(modeling_df):
     X_train = pd.DataFrame(X_train_scaled, index=X_train.index, columns = X_train.columns)
     X_validate = pd.DataFrame(X_validate_scaled, index=X_validate.index, columns = X_validate.columns)
     X_test = pd.DataFrame(X_test_scaled, index=X_test.index, columns = X_test.columns)
-    
-    X_train['baseline_prediction'] = 0
-    X_validate['baseline_prediction'] = 0
-    X_test['baseline_prediction'] = 0
     
     return X_train, X_validate, X_test, y_train, y_validate, y_test
 #----------------------------------------------------------------------------------------------------------|
