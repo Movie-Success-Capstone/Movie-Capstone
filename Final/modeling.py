@@ -72,8 +72,8 @@ def create_modeling_df(use_cache=True):
     
     modeling_df['baseline'] = 0
     modeling_df['baseline_accuracy'] = (modeling_df['baseline'] == modeling_df['success']).mean()
-
     modeling_df.to_csv('modeling.csv')
+    
     print('modeling.csv ready for future use')
     return modeling_df
 #----------------------------------------------------------------------------------------------------------|
